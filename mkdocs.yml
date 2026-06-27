@@ -1,0 +1,78 @@
+site_name: challenge-question
+site_url: https://goessl.github.io/challenge-question/
+site_author: Sebastian Gössl
+site_description: Challenge Question attempt progress.
+
+repo_name: goessl/challenge-question
+repo_url: https://github.com/goessl/challenge-question
+
+copyright: Copyright &copy; 2026 Sebastian Gössl
+
+theme:
+  name: material
+  features:
+    - navigation.footer
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to system preference
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          options:
+            show_root_toc_entry: false
+            show_symbol_type_heading: true
+            members_order: source
+            group_by_category: false
+            show_signature_annotations: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/goessl/
+      name: goessl on Github
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/lordgoessl/
+      name: lordgoessl on Instagram
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_javascript:
+  - mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - challenge_question.md
+  - challenge.md
+  - immediate_deductions.md
+  - single_particle.md
+  - Any Wavefunctions:
+    - any_wavefunctions/approach.md
+    - any_wavefunctions/scalars.md
+    - any_wavefunctions/conditions.md
+    - any_wavefunctions/explicit_real_construction.md
+    - any_wavefunctions/real_counter_example.md
+    - any_wavefunctions/discussion.md
+  - further_readings.md

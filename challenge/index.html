@@ -700,21 +700,21 @@
 
 
 <h1 id="challenge">Challenge</h1>
-<p>A set of one dimensional, orthonormal wavefunctions <span class="arithmatex">\(\{\phi_i:\mathbb{R}\to\mathbb{C}\}_{i\in\{1,2,\dots,N\}}\)</span>,</p>
+<p>A set of one dimensional, orthonormal wavefunctions <span class="arithmatex">\(\{\phi_i\}_{i\in\{0,1,\dots,N-1\}}\)</span>,</p>
 <div class="arithmatex">\[
-    \phi_i\in L_\mathbb{R}^2 \qquad \Braket{\phi_i|\phi_j}=\int_\mathbb{R}\phi_i^*(x)\phi_j(x)\,\mathrm{d}x=\delta_{ij} \ ,
+    \phi_i:\mathbb{R}\to\mathbb{C} \qquad \phi_i\in L^2(\mathbb{R}) \qquad \Braket{\phi_i|\phi_j}=\int_\mathbb{R}\phi_i^*(x)\phi_j(x)\,\mathrm{d}x=\delta_{ij} \ ,
 \]</div>
-<p>that all fulfill the Schrödinger equation for some potential <span class="arithmatex">\(V:\mathbb{R}\to\mathbb{R}\)</span></p>
+<p>that all fulfill the Schrödinger equation for some unknown potential <span class="arithmatex">\(V:\mathbb{R}\to\mathbb{R}\)</span></p>
 <div class="arithmatex">\[
     -\frac{1}{2}\phi_i''+V\phi_i = E_i\phi_i \ ,
 \]</div>
 <p>have a density (probability density distribution) <span class="arithmatex">\(n:\mathbb{R}\to\mathbb{R}_0^+\)</span></p>
 <div class="arithmatex">\[
-    n = \sum_{i=1}^N|\varphi_i|^2 \ .
+    n = \sum_{i=0}^{N-1}|\phi_i|^2 \ .
 \]</div>
 <p>What is the density to kinetic energy functional <span class="arithmatex">\(T[n]\)</span></p>
 <div class="arithmatex">\[
-    T = -\frac{1}{2}\int_\mathbb{R}\sum_{i=1}^N\phi_i^*(x)\phi_i''(x)\,\mathrm{d}x \ ?
+    T = -\frac{1}{2}\int_\mathbb{R}\sum_{i=0}^{N-1}\phi_i^*(x)\phi_i''(x)\,\mathrm{d}x \ ?
 \]</div>
 
 

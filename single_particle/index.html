@@ -901,7 +901,7 @@
     \begin{aligned}
         T &amp;= \frac{1}{2}\int_\mathbb{R}|\phi'(x)|^2\,\mathrm{d}x &amp;&amp;\mid \phi=e^{i\varphi}\sqrt{n} \\
         &amp;= \frac{1}{2}\int_\mathbb{R}\left|\frac{\mathrm{d}}{\mathrm{d}x}e^{i\varphi(x)}\sqrt{n(x)}\right|^2\,\mathrm{d}x &amp;&amp;\mid \frac{\mathrm{d}}{\mathrm{d}x}e^{af(x)}=ae^{af(x)}f'(x), \ \frac{\mathrm{d}}{\mathrm{d}x}\sqrt{f(x)}=\frac{f'(x)}{2\sqrt{f(x)}} \\
-        &amp;= \frac{1}{2}\int_\mathbb{R}\left|ie^{i\varphi(x)}\varphi'(x)\sqrt{n(x)}+e^{i\varphi(x)}\frac{n'(x)}{2\sqrt{n(x)}}\right|^2\,\mathrm{d}x &amp;&amp;\mid \left|e^{i\theta}z\right|=|z|^2 \\
+        &amp;= \frac{1}{2}\int_\mathbb{R}\left|ie^{i\varphi(x)}\varphi'(x)\sqrt{n(x)}+e^{i\varphi(x)}\frac{n'(x)}{2\sqrt{n(x)}}\right|^2\,\mathrm{d}x &amp;&amp;\mid \left|e^{i\theta}z\right|=|z| \\
         &amp;= \frac{1}{2}\int_\mathbb{R}\left|i\varphi'(x)\sqrt{n(x)}+\frac{n'(x)}{2\sqrt{n(x)}}\right|^2\,\mathrm{d}x &amp;&amp;\mid |a+ib|^2=a^2+b^2 \\
         &amp;= \frac{1}{2}\int_\mathbb{R}\varphi'(x)^2n(x)+\frac{n'(x)^2}{4n(x)}\,\mathrm{d}x \\
         &amp;= \frac{1}{8}\int_\mathbb{R}\frac{n'(x)^2}{n(x)}+4\varphi'(x)^2n(x)\,\mathrm{d}x
@@ -911,6 +911,11 @@
 <div class="arithmatex">\[
     T = \frac{1}{8}\int_\mathbb{R}\frac{n'(x)^2}{n(x)}\,\mathrm{d}x
 \]</div>
+<blockquote>
+<p>[!DANGER]- Rational Integrand
+Prove finite pointlike <span class="arithmatex">\(x\)</span> with <span class="arithmatex">\(n(x)=0\)</span>. Longer intervals shouldn't be a problem because the <span class="arithmatex">\(n'(x)=0\)</span> also.</p>
+<p>Todo everywhere.</p>
+</blockquote>
 <h2 id="solution">Solution</h2>
 <h3 id="complex">Complex</h3>
 <div class="arithmatex">\[

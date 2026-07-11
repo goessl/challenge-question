@@ -415,6 +415,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#natural-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Natural Units
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#density-norm" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -430,17 +441,6 @@
     <span class="md-ellipsis">
       
         Partial integration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operator-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operator form
       
     </span>
   </a>
@@ -808,6 +808,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#natural-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Natural Units
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#density-norm" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -823,17 +834,6 @@
     <span class="md-ellipsis">
       
         Partial integration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operator-form" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operator form
       
     </span>
   </a>
@@ -911,32 +911,39 @@
 
 
 <h1 id="immediate-deductions">Immediate Deductions</h1>
+<h2 id="natural-units">Natural Units</h2>
+<p>Natural units <span class="arithmatex">\(\hbar=m=1\)</span> used everywhere like in the <a href="../challenge_question/">original Challenge-Question document</a>.</p>
+<blockquote>
+<p>[!DANGER]- Natural Units
+TODO everything with SI-units.</p>
+</blockquote>
 <h2 id="density-norm">Density norm</h2>
+<p>Particle count.</p>
 <div class="arithmatex">\[
     \begin{aligned}
-        \int_\mathbb{R}n(x)\,\mathrm{d}x &amp;= \int_\mathbb{R}\sum_{i=1}^N|\phi_i(x)|^2\,\mathrm{d}x \\
-        &amp;= \sum_{i=1}^N\int_\mathbb{R}|\phi_i(x)|^2\,\mathrm{d}x &amp;&amp;\mid ||\phi_i||_{L_\mathbb{R}^2}=1 \\
-        &amp;= \sum_{i=1}^N1 \\
+        \int_\mathbb{R}n(x)\,\mathrm{d}x &amp;= \int_\mathbb{R}\sum_{i=0}^{N-1}|\phi_i(x)|^2\,\mathrm{d}x \\
+        &amp;= \sum_{i=0}^{N-1}\int_\mathbb{R}|\phi_i(x)|^2\,\mathrm{d}x &amp;&amp;\mid ||\phi_i||_{L^2(\mathbb{R})}=1 \\
+        &amp;= \sum_{i=0}^{N-1}1 \\
         &amp;= N
     \end{aligned}
 \]</div>
 <h2 id="partial-integration">Partial integration</h2>
+<p>More pleasant integral for <span class="arithmatex">\(T\)</span>.</p>
 <div class="arithmatex">\[
     \begin{aligned}
-        T &amp;= -\frac{1}{2}\int_\mathbb{R}\sum_{i=1}^N\phi_i^*(x)\phi_i''(x)\,\mathrm{d}x \\
-        &amp;= -\frac{1}{2}\sum_{i=1}^N\int_\mathbb{R}\phi_i^*(x)\phi_i''(x)\,\mathrm{d}x &amp;&amp;\mid \text{p.I.} \\
-        &amp;= -\frac{1}{2}\sum_{i=1}^N\left(\phi_i^*\phi_i'\mid_\mathbb{R}-\int_\mathbb{R}|\phi_i'(x)|^2\,\mathrm{d}x\right) &amp;&amp;\mid \phi_i(\pm\infty)=\phi_i^{(k)}(\pm\infty)=0 \\
-        &amp;= +\frac{1}{2}\sum_{i=1}^N\int_\mathbb{R}|\phi_i'(x)|^2\,\mathrm{d}x
+        T &amp;= -\frac{1}{2}\int_\mathbb{R}\sum_{i=0}^{N-1}\phi_i^*(x)\phi_i''(x)\,\mathrm{d}x \\
+        &amp;= -\frac{1}{2}\sum_{i=0}^{N-1}\int_\mathbb{R}\phi_i^*(x)\phi_i''(x)\,\mathrm{d}x &amp;&amp;\mid \text{p.I.} \\
+        &amp;= -\frac{1}{2}\sum_{i=0}^{N-1}\left(\phi_i^*\phi_i'\mid_\mathbb{R}-\int_\mathbb{R}|\phi_i'(x)|^2\,\mathrm{d}x\right) &amp;&amp;\mid \phi_i\in\mathcal{S}(\mathbb{R}) \\
+        &amp;= +\frac{1}{2}\sum_{i=0}^{N-1}\int_\mathbb{R}|\phi_i'(x)|^2\,\mathrm{d}x
     \end{aligned}
 \]</div>
-<h2 id="operator-form">Operator form</h2>
-<div class="arithmatex">\[
-    \begin{aligned}
-        \hat{T} &amp;= \frac{\hat{p}^2}{2} &amp;&amp;\mid \hat{p}=\frac{i}{\sqrt{2}}\left(\hat{a}^\dagger-\hat{a}\right) \\
-        &amp;= -\frac{\left(\hat{a}^\dagger-\hat{a}\right)^2}{4} \\
-        &amp;= \frac{\hat{a}\hat{a}^\dagger+\hat{a}^\dagger\hat{a}-\hat{a}^{\dagger2}-\hat{a}^2}{4}
-    \end{aligned}
-\]</div>
+<blockquote>
+<p>[!DANGER]- Space of Wavefunctions
+What is the space of possible wavefunctions?</p>
+<p><span class="arithmatex">\(L^2(\mathbb{R})\)</span>? Should be sufficient to call <span class="arithmatex">\(\phi_i(\pm\infty)=\phi_i'(\pm\infty)=0\)</span>.</p>
+<p>But just to be sure I've used <span class="arithmatex">\(\mathcal{S}(\mathbb{R})\)</span> which is already dense in <span class="arithmatex">\(L^2(\mathbb{R})\)</span>.</p>
+<p>TODO</p>
+</blockquote>
 <h2 id="plane-invariance">Plane Invariance</h2>
 <h3 id="lemma">Lemma</h3>
 <p>The density <span class="arithmatex">\(\hat{\rho}\)</span> and the kinetic energy <span class="arithmatex">\(T\)</span> of any pairs of wavefunctions only depends on the plane they lie in, not their orientation within.</p>

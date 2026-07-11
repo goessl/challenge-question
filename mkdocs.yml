@@ -51,8 +51,10 @@ extra:
       name: lordgoessl on Instagram
 
 markdown_extensions:
+  - admonition
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.details
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.tasklist:

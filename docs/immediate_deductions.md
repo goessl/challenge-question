@@ -4,8 +4,9 @@
 
 Natural units $\hbar=m=1$ used everywhere like in the [original Challenge-Question document](challenge_question.md).
 
-> [!DANGER]- Natural Units
-> TODO everything with SI-units.
+!!! danger "Natural Units"
+
+    TODO everything with SI-units.
 
 ## Density norm
 
@@ -33,14 +34,15 @@ $$
     \end{aligned}
 $$
 
-> [!DANGER]- Space of Wavefunctions
-> What is the space of possible wavefunctions?
-> 
-> $L^2(\mathbb{R})$? Should be sufficient to call $\phi_i(\pm\infty)=\phi_i'(\pm\infty)=0$.
-> 
-> But just to be sure I've used $\mathcal{S}(\mathbb{R})$ which is already dense in $L^2(\mathbb{R})$.
-> 
-> TODO
+!!! danger "Space of Wavefunctions"
+
+    What is the space of possible wavefunctions?
+    
+    $L^2(\mathbb{R})$? Should be sufficient to call $\phi_i(\pm\infty)=\phi_i'(\pm\infty)=0$.
+    
+    But just to be sure I've used $\mathcal{S}(\mathbb{R})$ which is already dense in $L^2(\mathbb{R})$.
+    
+    TODO
 
 ## Plane Invariance
 

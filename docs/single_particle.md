@@ -31,10 +31,11 @@ $$
     T = \frac{1}{8}\int_\mathbb{R}\frac{n'(x)^2}{n(x)}\,\mathrm{d}x
 $$
 
-> [!DANGER]- Rational Integrand
-> Prove finite pointlike $x$ with $n(x)=0$. Longer intervals shouldn't be a problem because the $n'(x)=0$ also.
-> 
-> Todo everywhere.
+!!! danger "Rational Integrand"
+
+    Prove finite pointlike $x$ with $n(x)=0$. Longer intervals shouldn't be a problem because the $n'(x)=0$ also.
+    
+    Todo everywhere.
 
 ## Solution
 

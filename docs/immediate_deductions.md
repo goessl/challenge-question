@@ -1,36 +1,46 @@
 # Immediate Deductions
 
+## Natural Units
+
+Natural units $\hbar=m=1$ used everywhere like in the [original Challenge-Question document](challenge_question.md).
+
+> [!DANGER]- Natural Units
+> TODO everything with SI-units.
+
 ## Density norm
+
+Particle count.
 
 $$
     \begin{aligned}
-        \int_\mathbb{R}n(x)\,\mathrm{d}x &= \int_\mathbb{R}\sum_{i=1}^N|\phi_i(x)|^2\,\mathrm{d}x \\
-        &= \sum_{i=1}^N\int_\mathbb{R}|\phi_i(x)|^2\,\mathrm{d}x &&\mid ||\phi_i||_{L_\mathbb{R}^2}=1 \\
-        &= \sum_{i=1}^N1 \\
+        \int_\mathbb{R}n(x)\,\mathrm{d}x &= \int_\mathbb{R}\sum_{i=0}^{N-1}|\phi_i(x)|^2\,\mathrm{d}x \\
+        &= \sum_{i=0}^{N-1}\int_\mathbb{R}|\phi_i(x)|^2\,\mathrm{d}x &&\mid ||\phi_i||_{L^2(\mathbb{R})}=1 \\
+        &= \sum_{i=0}^{N-1}1 \\
         &= N
     \end{aligned}
 $$
 
 ## Partial integration
 
-$$
-    \begin{aligned}
-        T &= -\frac{1}{2}\int_\mathbb{R}\sum_{i=1}^N\phi_i^*(x)\phi_i''(x)\,\mathrm{d}x \\
-        &= -\frac{1}{2}\sum_{i=1}^N\int_\mathbb{R}\phi_i^*(x)\phi_i''(x)\,\mathrm{d}x &&\mid \text{p.I.} \\
-        &= -\frac{1}{2}\sum_{i=1}^N\left(\phi_i^*\phi_i'\mid_\mathbb{R}-\int_\mathbb{R}|\phi_i'(x)|^2\,\mathrm{d}x\right) &&\mid \phi_i(\pm\infty)=\phi_i^{(k)}(\pm\infty)=0 \\
-        &= +\frac{1}{2}\sum_{i=1}^N\int_\mathbb{R}|\phi_i'(x)|^2\,\mathrm{d}x
-    \end{aligned}
-$$
-
-## Operator form
+More pleasant integral for $T$.
 
 $$
     \begin{aligned}
-        \hat{T} &= \frac{\hat{p}^2}{2} &&\mid \hat{p}=\frac{i}{\sqrt{2}}\left(\hat{a}^\dagger-\hat{a}\right) \\
-        &= -\frac{\left(\hat{a}^\dagger-\hat{a}\right)^2}{4} \\
-        &= \frac{\hat{a}\hat{a}^\dagger+\hat{a}^\dagger\hat{a}-\hat{a}^{\dagger2}-\hat{a}^2}{4}
+        T &= -\frac{1}{2}\int_\mathbb{R}\sum_{i=0}^{N-1}\phi_i^*(x)\phi_i''(x)\,\mathrm{d}x \\
+        &= -\frac{1}{2}\sum_{i=0}^{N-1}\int_\mathbb{R}\phi_i^*(x)\phi_i''(x)\,\mathrm{d}x &&\mid \text{p.I.} \\
+        &= -\frac{1}{2}\sum_{i=0}^{N-1}\left(\phi_i^*\phi_i'\mid_\mathbb{R}-\int_\mathbb{R}|\phi_i'(x)|^2\,\mathrm{d}x\right) &&\mid \phi_i\in\mathcal{S}(\mathbb{R}) \\
+        &= +\frac{1}{2}\sum_{i=0}^{N-1}\int_\mathbb{R}|\phi_i'(x)|^2\,\mathrm{d}x
     \end{aligned}
 $$
+
+> [!DANGER]- Space of Wavefunctions
+> What is the space of possible wavefunctions?
+> 
+> $L^2(\mathbb{R})$? Should be sufficient to call $\phi_i(\pm\infty)=\phi_i'(\pm\infty)=0$.
+> 
+> But just to be sure I've used $\mathcal{S}(\mathbb{R})$ which is already dense in $L^2(\mathbb{R})$.
+> 
+> TODO
 
 ## Plane Invariance
 

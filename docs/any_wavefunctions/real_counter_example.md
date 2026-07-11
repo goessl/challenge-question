@@ -48,7 +48,7 @@ $$
 
 ## Second set
 
-Now we can construct some "virtual" wavefunctions with the same density like described in [[3 Explicit Real Construction]]:
+Now we can construct some "virtual" wavefunctions with the same density like described in [Explicit real Construction](explicit_real_construction.md):
 
 $$
     \begin{aligned}

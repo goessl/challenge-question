@@ -142,7 +142,7 @@ $$
         T &= \frac{1}{2}\int_\mathbb{R}|\phi_1'(x)|^2+|\phi_2'(x)|^2\,\mathrm{d}x \\
         &= \frac{1}{2}\int_\mathbb{R}\varphi_1'(x)^2n(x)\cos^2\alpha(x)+\frac{n'(x)^2}{4n(x)}\cos^2\alpha(x)-n'(x)\alpha'(x)\cos\alpha(x)\sin\alpha(x)+n(x)\alpha'(x)^2\sin^2\alpha(x) \\
         &\qquad +\varphi_2'(x)^2n(x)\sin^2\alpha(x)+\frac{n'(x)^2}{4n(x)}\sin^2\alpha(x)+n'(x)\alpha'(x)\cos\alpha(x)\sin\alpha(x)+n(x)\alpha'(x)^2\cos^2\alpha(x)\,\mathrm{d}x \\
-        &= \frac{1}{2}\int_\mathbb{R}n(x)\left(\varphi_1'(x)^2\cos^2+\varphi_2'(x)^2\sin^2\alpha(x)\right)+\frac{n'(x)^2}{4n(x)}+n(x)\alpha'(x)^2\,\mathrm{d}x \\
+        &= \frac{1}{2}\int_\mathbb{R}n(x)\left(\varphi_1'(x)^2\cos^2\alpha(x)+\varphi_2'(x)^2\sin^2\alpha(x)\right)+\frac{n'(x)^2}{4n(x)}+n(x)\alpha'(x)^2\,\mathrm{d}x \\
         &= \frac{1}{8}\int_\mathbb{R}\frac{n'(x)^2}{n(x)}+4n(x)\left(\alpha'(x)^2+\varphi_1'(x)^2\cos^2\alpha(x)+\varphi_2'(x)^2\sin^2\alpha(x)\right)\,\mathrm{d}x
     \end{aligned}
 $$

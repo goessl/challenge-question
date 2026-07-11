@@ -38,15 +38,15 @@ Therefore we only have to check the condition for $\alpha$:
 
 $$
     \begin{aligned}
-        &\int_\mathbb{R}n(x)e^{i\alpha(x)}\,\mathrm{d}x &&\mid \alpha=\frac{\pi}{2}s \\
-        &= \int_\mathbb{R}n(x)e^{i\frac{\pi}{2}s(x)}\,\mathrm{d}x &&\mid u\overset{!}{=}s \quad \frac{\mathrm{d}u}{\mathrm{d}x}=s'(x)=n(x) \ \Rightarrow \ \mathrm{d}x=\frac{\mathrm{d}u}{n(x)} \\
-        &= \int_{x=\mathbb{R}}n(x)e^{i\frac{\pi}{2}u(x)}\,\frac{\mathrm{d}u}{n(x)} \\
-        &= \int_{x=\mathbb{R}}e^{i\frac{\pi}{2}u(x)}\,\mathrm{d}u &&\mid \int e^{ax}\,\mathrm{d}x=\frac{e^{ax}}{a}+C \\
-        &= \left.\frac{-2i}{\pi}e^{i\frac{\pi}{2}u}\right|_{x=\mathbb{R}} &&\mid u=s \\
-        &= \left.\frac{-2i}{\pi}e^{i\frac{\pi}{2}s}\right|_\mathbb{R} \\
-        &= \frac{-2i}{\pi}\left[e^{i\frac{\pi}{2}s(+\infty)}-e^{i\frac{\pi}{2}s(-\infty)}\right] &&\mid s(-\infty)=0, \ s(+\infty)=2 \\
-        &= \frac{-2i}{\pi}\left[e^{i\frac{\pi}{2}2}-e^{i\frac{\pi}{2}0}\right] &&\mid e^{i\pi}=-1, \ e^0=+1 \\
-        &= \frac{-2i}{\pi}\left[-1-1\right] \\
+        &\int_\mathbb{R}n(x)e^{i2\alpha(x)}\,\mathrm{d}x &&\mid \alpha=\frac{\pi}{2}s \\
+        &= \int_\mathbb{R}n(x)e^{i\pi s(x)}\,\mathrm{d}x &&\mid u\overset{!}{=}s \quad \frac{\mathrm{d}u}{\mathrm{d}x}=s'(x)=n(x) \ \Rightarrow \ \mathrm{d}x=\frac{\mathrm{d}u}{n(x)} \\
+        &= \int_{x=\mathbb{R}}n(x)e^{i\pi u(x)}\,\frac{\mathrm{d}u}{n(x)} \\
+        &= \int_{x=\mathbb{R}}e^{i\pi u(x)}\,\mathrm{d}u &&\mid \int e^{ax}\,\mathrm{d}x=\frac{e^{ax}}{a}+C \\
+        &= \left.\frac{-i}{\pi}e^{i\pi u}\right|_{x=\mathbb{R}} &&\mid u=s \\
+        &= \left.\frac{-i}{\pi}e^{i\pi s}\right|_\mathbb{R} \\
+        &= \frac{-i}{\pi}\left[e^{i\pi s(+\infty)}-e^{i\pi s(-\infty)}\right] &&\mid s(-\infty)=0, \ s(+\infty)=2 \\
+        &= \frac{-i}{\pi}\left[e^{i\pi 2}-e^{i\pi 0}\right] &&\mid e^{i2\pi}=+1, \ e^0=+1 \\
+        &= \frac{-i}{\pi}\left[1-1\right] \\
         &= 0
     \end{aligned}
 $$
@@ -118,12 +118,12 @@ $$
         &= \int_\mathbb{R}n(x)\cos\frac{\pi}{2}s(x)\sin\frac{\pi}{2}s(x)\,\mathrm{d}x &&\mid \cos \varphi\sin\varphi=\frac{\sin2\varphi}{2} \\
         &= \int_\mathbb{R}n(x)\frac{\sin\pi s(x)}{2}\,\mathrm{d}x &&\mid u(x)\overset{!}{=}s(x), \quad \frac{\mathrm{d}u}{\mathrm{d}x}=n(x) \ \Rightarrow \ \mathrm{d}x=\frac{\mathrm{d}u}{n(x)} \\
         &= \frac{1}{2}\int_{x=\mathbb{R}}n(x)\sin\pi u\,\frac{\mathrm{d}u}{n(x)} \\
-        &= \frac{1}{2}\int_{x=\mathbb{R}}\sin\pi u\,\mathrm{d}u &&\mid \int\sin\pi x\,\mathrm{d}x=\frac{\cos\pi x}{\pi}+C \\
-        &= \frac{1}{2}\left.\frac{\cos\pi u}{\pi}\right|_{x=\mathbb{R}} &&\mid u=s \\
-        &= \frac{1}{2\pi}\left.\cos\pi s\right|_\mathbb{R} \\
-        &= \frac{1}{2\pi}\left[\cos\pi s(+\infty)-\cos\pi s(-\infty)\right] &&\mid s(-\infty)=0, \ s(+\infty)=2 \\
-        &= \frac{1}{2\pi}\left[\cos2\pi-\cos0\right] &&\mid \cos2\pi=\cos0=1 \\
-        &= \frac{1}{2\pi}\left[1-1\right] \\
+        &= \frac{1}{2}\int_{x=\mathbb{R}}\sin\pi u\,\mathrm{d}u &&\mid \int\sin\pi x\,\mathrm{d}x=-\frac{\cos\pi x}{\pi}+C \\
+        &= \frac{1}{2}\left.\frac{-\cos\pi u}{\pi}\right|_{x=\mathbb{R}} &&\mid u=s \\
+        &= -\frac{1}{2\pi}\left.\cos\pi s\right|_\mathbb{R} \\
+        &= -\frac{1}{2\pi}\left[\cos\pi s(+\infty)-\cos\pi s(-\infty)\right] &&\mid s(-\infty)=0, \ s(+\infty)=2 \\
+        &= -\frac{1}{2\pi}\left[\cos2\pi-\cos0\right] &&\mid \cos2\pi=\cos0=1 \\
+        &= -\frac{1}{2\pi}\left[1-1\right] \\
         &= 0
     \end{aligned}
 $$

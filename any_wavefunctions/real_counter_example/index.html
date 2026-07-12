@@ -549,7 +549,7 @@
   <span class="md-ellipsis">
     
   
-    Explicit real Construction
+    Explicit Real Construction
   
 
     
@@ -713,6 +713,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../further_readings/" class="md-nav__link">
         
   
@@ -813,13 +840,14 @@
 
 
 <h1 id="real-counter-example">Real Counter Example</h1>
-<p>To find a counter example to the challenge, we just have to find two sets of wavefunctions <span class="arithmatex">\(\{\phi_1, \phi_2\}\)</span> with the same density <span class="arithmatex">\(n\)</span> and different kinetic energy <span class="arithmatex">\(T\)</span>.</p>
+<p>Constructiveness is followed by destructiveness.</p>
+<p>To disprove the chosen approach, we just have to find two pairs of wavefunctions <span class="arithmatex">\(\{\phi_1, \phi_2\}\)</span> with the same density <span class="arithmatex">\(n\)</span> and different kinetic energy <span class="arithmatex">\(T\)</span>.</p>
 <h2 id="first-set">First set</h2>
 <p>Let's choose the trivial wavefunction pair</p>
 <div class="arithmatex">\[
     \begin{aligned}
-        \phi_1(x) &amp;= h_0(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}}H_0(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}} &amp;&amp; \text{where $h_n$ are the Hermite functions} \\
-        \phi_2(x) &amp;= h_1(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{2\sqrt{\pi}}}H_1(x) = \sqrt{\frac{2}{\sqrt{\pi}}}e^{-\frac{x^2}{2}}x &amp;&amp; \text{where $H_n$ are the Hermite polynomials}
+        \phi_1(x) &amp;= h_0(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}}H_0(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}} &amp;&amp; \text{where $h_j$ are the Hermite functions} \\
+        \phi_2(x) &amp;= h_1(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{2\sqrt{\pi}}}H_1(x) = \sqrt{\frac{2}{\sqrt{\pi}}}e^{-\frac{x^2}{2}}x &amp;&amp; \text{where $H_j$ are the Hermite polynomials}
     \end{aligned}
 \]</div>
 <p>with their derivatives</p>
@@ -874,9 +902,9 @@
         &amp;\qquad\mid \frac{4x^6-4x^4+x^2}{2x^2+1}=2x^4-3x^2+2-\frac{2}{2x^2+1} \\
         &amp;\qquad\mid \left(2x^2+1\right)^3=8x^6+12x^4+6x^2+1 \\
         &amp;= \frac{1}{8}\int_\mathbb{R}\frac{4}{\sqrt{\pi}}e^{-x^2}\left(2x^4-3x^2+2-\frac{2}{2x^2+1}\right)+\sqrt{\pi}e^{-3x^2}\left(8x^6+12x^4+6x^2+1\right)\,\mathrm{d}x \\
-        &amp;\qquad\mid \int_\mathbb{R}e^{-ax^2}x^n\,\mathrm{d}x=\begin{cases}
-            \sqrt{\frac{\pi}{a}}\frac{(n-1)!!}{(2a)^\frac{n}{2}} &amp; n\in\mathbb{G} \\
-            0 &amp; n\in\mathbb{U}
+        &amp;\qquad\mid \int_\mathbb{R}e^{-ax^2}x^j\,\mathrm{d}x=\begin{cases}
+            \sqrt{\frac{\pi}{a}}\frac{(j-1)!!}{(2a)^\frac{j}{2}} &amp; j\in\mathbb{G} \\
+            0 &amp; j\in\mathbb{U}
         \end{cases} \\
         &amp;\qquad\mid \int_\mathbb{R}\frac{e^{-x^2}}{2x^2+1}\,\mathrm{d}x=\sqrt{\frac{e}{2}}\pi\text{erfc}\frac{1}{\sqrt{2}} \\
         &amp;= \frac{1}{8}\left(\frac{4}{\sqrt{\pi}}\left(2\sqrt{\pi}\frac{3!!}{2^2}-3\sqrt{\pi}\frac{1!!}{2^1}+2\sqrt{\pi}\frac{(-1)!!}{2^0}-2\sqrt{\frac{e}{2}}\pi\text{erfc}\frac{1}{\sqrt{2}}\right)\right. \\
@@ -973,7 +1001,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../explicit_real_construction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Explicit real Construction">
+          <a href="../explicit_real_construction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Explicit Real Construction">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -983,7 +1011,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Explicit real Construction
+                Explicit Real Construction
               </div>
             </div>
           </a>

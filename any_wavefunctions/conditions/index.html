@@ -633,7 +633,7 @@
   <a href="#real-orthogonalisation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Real Orthogonalisation
+        Real orthogonalisation
       
     </span>
   </a>
@@ -735,7 +735,7 @@
   <span class="md-ellipsis">
     
   
-    Explicit real Construction
+    Explicit Real Construction
   
 
     
@@ -808,6 +808,33 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -925,7 +952,7 @@
   <a href="#real-orthogonalisation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Real Orthogonalisation
+        Real orthogonalisation
       
     </span>
   </a>
@@ -1026,7 +1053,7 @@
 
 <h1 id="conditions">Conditions</h1>
 <h2 id="question">Question</h2>
-<p>For a given density <span class="arithmatex">\(n\)</span> find all pairs of wavefunctions <span class="arithmatex">\(\phi_1, \phi_2\)</span> such that <span class="arithmatex">\(n=|\phi_1|^2+|\phi_2|^2\)</span>.</p>
+<p>For a given density <span class="arithmatex">\(n\)</span> find all valid pairs of wavefunctions <span class="arithmatex">\(\phi_1, \phi_2\)</span> such that <span class="arithmatex">\(n=|\phi_1|^2+|\phi_2|^2\)</span>.</p>
 <h2 id="approach">Approach</h2>
 <p>The following conditions must be met</p>
 <div class="arithmatex">\[
@@ -1038,11 +1065,11 @@
     \end{array}
 \]</div>
 <h3 id="density">Density</h3>
-<p><em>Pointwise density</em> requires the solution of <a href="../scalars/">Scalars</a> with some function <span class="arithmatex">\(\alpha:\mathbb{R}\to\mathbb{R}\)</span> and phases <span class="arithmatex">\(\varphi_1,\varphi_2:\mathbb{R}\to\mathbb{R}\)</span>:</p>
+<p><em>Pointwise density</em> requires the solution of <a href="../scalars/">scalars</a> with some angle <span class="arithmatex">\(\alpha:\mathbb{R}\to\mathbb{R}\)</span> and phases <span class="arithmatex">\(\varphi_1,\varphi_2:\mathbb{R}\to\mathbb{R}\)</span> stretched over the whole real axis:</p>
 <div class="arithmatex">\[
     \phi_1(x)=e^{i\varphi_1(x)}\sqrt{n(x)}\cos\alpha(x) \qquad \phi_2(x)=e^{i\varphi_2(x)}\sqrt{n(x)}\sin\alpha(x)
 \]</div>
-<p>The other requirements now become</p>
+<p>The remaining requirements become</p>
 <div class="arithmatex">\[
     \begin{array}{ll}
         \text{normalisation of $\phi_1$:} &amp; \int_\mathbb{R}n(x)\cos^2\alpha(x)\,\mathrm{d}x=1 \\
@@ -1062,7 +1089,7 @@
         \int_\mathbb{R}n(x)\cos^2\alpha(x)\,\mathrm{d}x=1 \quad &amp;\Leftrightarrow \quad\int_\mathbb{R}n(x)\sin^2\alpha(x)\,\mathrm{d}x=1
     \end{aligned}
 \]</div>
-<p>Which means the <em>normalisation of <span class="arithmatex">\(\phi_2\)</span></em> can be dropped, leaving:</p>
+<p>Leaving the remaining requirements as</p>
 <div class="arithmatex">\[
     \begin{array}{ll}
         \text{normalisation:} &amp; \int_\mathbb{R}n(x)\cos^2\alpha(x)\,\mathrm{d}x=1 \\
@@ -1090,7 +1117,7 @@
         \text{orthogonalisation:} &amp; \int_\mathbb{R}e^{i\Delta\varphi(x)}n(x)\sin2\alpha(x)\,\mathrm{d}x=0
     \end{array}
 \]</div>
-<h3 id="real-orthogonalisation">Real Orthogonalisation</h3>
+<h3 id="real-orthogonalisation">Real orthogonalisation</h3>
 <p>For the real case <span class="arithmatex">\(\Delta\varphi=0\)</span> the two requirements for <span class="arithmatex">\(\alpha\)</span> can further be reduced to a single <em>real orthonormalisation</em> requirement:</p>
 <div class="arithmatex">\[
     \begin{aligned}
@@ -1107,6 +1134,7 @@
         \text{real orthonormalisation:} \quad 0 &amp;= \int_\mathbb{R}n(x)e^{i2\alpha(x)}\,\mathrm{d}x
     \end{aligned}
 \]</div>
+<p>Have to admit that this is quite a nice little intermediate result.</p>
 <h2 id="solution">Solution</h2>
 <h3 id="general-complex-case">General complex case</h3>
 <div class="arithmatex">\[
@@ -1195,13 +1223,13 @@
         
         
           
-          <a href="../explicit_real_construction/" class="md-footer__link md-footer__link--next" aria-label="Next: Explicit real Construction">
+          <a href="../explicit_real_construction/" class="md-footer__link md-footer__link--next" aria-label="Next: Explicit Real Construction">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Explicit real Construction
+                Explicit Real Construction
               </div>
             </div>
             <div class="md-footer__button md-icon">

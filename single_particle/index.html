@@ -502,17 +502,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#real-test" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Real Test
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -666,7 +655,7 @@
   <span class="md-ellipsis">
     
   
-    Explicit real Construction
+    Explicit Real Construction
   
 
     
@@ -739,6 +728,33 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -857,17 +873,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#real-test" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Real Test
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -890,7 +895,7 @@
 
 <h1 id="single-particle">Single Particle</h1>
 <h2 id="question">Question</h2>
-<p>For a single dimensional wavefunction <span class="arithmatex">\(\phi\)</span> (<span class="arithmatex">\(\phi:\mathbb{R}\to\mathbb{C}\)</span>), only the density <span class="arithmatex">\(n=|\phi|^2\)</span> is known. What is the kinetic energy?</p>
+<p>For a sole wavefunction <span class="arithmatex">\(\phi\)</span>, only the density <span class="arithmatex">\(n=|\phi|^2\)</span> is known. What is the kinetic energy?</p>
 <h2 id="approach">Approach</h2>
 <p>The wavefunction, up to some phase, can be reconstructed from the density:</p>
 <div class="arithmatex">\[
@@ -907,13 +912,13 @@
         &amp;= \frac{1}{8}\int_\mathbb{R}\frac{n'(x)^2}{n(x)}+4\varphi'(x)^2n(x)\,\mathrm{d}x
     \end{aligned}
 \]</div>
-<p>And for a real wavefunction (constant phase) <span class="arithmatex">\(\varphi'=0\)</span>:</p>
+<p>And for a real wavefunction <span class="arithmatex">\(\text{ran}\,\phi\subseteq\mathbb{R} \ \Rightarrow \ \varphi'=0\)</span>:</p>
 <div class="arithmatex">\[
     T = \frac{1}{8}\int_\mathbb{R}\frac{n'(x)^2}{n(x)}\,\mathrm{d}x
 \]</div>
 <div class="admonition danger">
-<p class="admonition-title">Rational Integrand</p>
-<p>Prove finite pointlike <span class="arithmatex">\(x\)</span> with <span class="arithmatex">\(n(x)=0\)</span>. Longer intervals shouldn't be a problem because the <span class="arithmatex">\(n'(x)=0\)</span> also.</p>
+<p class="admonition-title">Rational integrand</p>
+<p>Prove that there are only finite points <span class="arithmatex">\(x\)</span> with <span class="arithmatex">\(n(x)=0\)</span>. Longer intervals shouldn't be a problem because then <span class="arithmatex">\(n'(x)=0\)</span> also.</p>
 <p>Todo everywhere.</p>
 </div>
 <h2 id="solution">Solution</h2>
@@ -924,16 +929,6 @@
 <h3 id="real">Real</h3>
 <div class="arithmatex">\[
     T[n] = \frac{1}{8}\int_\mathbb{R}\frac{n'(x)^2}{n(x)}\,\mathrm{d}x
-\]</div>
-<h2 id="real-test">Real Test</h2>
-<div class="arithmatex">\[
-    \begin{aligned}
-        T &amp;= \frac{1}{8}\int_\mathbb{R}\frac{n'(x)^2}{n(x)}\,\mathrm{d}x &amp;&amp;\mid n=\phi^2 \\
-        &amp;= \frac{1}{8}\int_\mathbb{R}\frac{\left(\frac{\mathrm{d}}{\mathrm{d}x}\phi(x)^2\right)^2}{\phi(x)^2}\,\mathrm{d}x \\
-        &amp;= \frac{1}{8}\int_\mathbb{R}\frac{\left(2\phi(x)\phi'(x)\right)^2}{\phi(x)^2}\,\mathrm{d}x \\
-        &amp;= \frac{1}{8}\int_\mathbb{R}\frac{4\phi(x)^2\phi'(x)^2}{\phi(x)^2}\,\mathrm{d}x \\
-        &amp;= \frac{1}{2}\int_\mathbb{R}\phi'(x)^2\,\mathrm{d}x
-    \end{aligned}
 \]</div>
 
 

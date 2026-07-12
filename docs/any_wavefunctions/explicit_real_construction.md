@@ -1,8 +1,8 @@
-# Explicit real Construction
+# Explicit Real Construction
 
 ## Question
 
-For a given density $n$ find any pair of real wavefunctions $\phi_1, \phi_2$ such that $n=\phi_1^2+\phi_2^2$.
+For a given density $n$ find any pair of valid real wavefunctions $\phi_1, \phi_2$ such that $n=\phi_1^2+\phi_2^2$.
 
 ## Solution
 
@@ -25,7 +25,7 @@ $$
 
 ## Proof
 
-In [Conditions](conditions.md) it was shown that the wavefunctions must have the structure
+In [conditions](conditions.md) it was shown that the wavefunctions must have the structure
 
 $$
     \begin{aligned}

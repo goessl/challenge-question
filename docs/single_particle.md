@@ -2,7 +2,7 @@
 
 ## Question
 
-For a single dimensional wavefunction $\phi$ ($\phi:\mathbb{R}\to\mathbb{C}$), only the density $n=|\phi|^2$ is known. What is the kinetic energy?
+For a sole wavefunction $\phi$, only the density $n=|\phi|^2$ is known. What is the kinetic energy?
 
 ## Approach
 
@@ -25,15 +25,15 @@ $$
     \end{aligned}
 $$
 
-And for a real wavefunction (constant phase) $\varphi'=0$:
+And for a real wavefunction $\text{ran}\,\phi\subseteq\mathbb{R} \ \Rightarrow \ \varphi'=0$:
 
 $$
     T = \frac{1}{8}\int_\mathbb{R}\frac{n'(x)^2}{n(x)}\,\mathrm{d}x
 $$
 
-!!! danger "Rational Integrand"
+!!! danger "Rational integrand"
 
-    Prove finite pointlike $x$ with $n(x)=0$. Longer intervals shouldn't be a problem because the $n'(x)=0$ also.
+    Prove that there are only finite points $x$ with $n(x)=0$. Longer intervals shouldn't be a problem because then $n'(x)=0$ also.
     
     Todo everywhere.
 
@@ -49,16 +49,4 @@ $$
 
 $$
     T[n] = \frac{1}{8}\int_\mathbb{R}\frac{n'(x)^2}{n(x)}\,\mathrm{d}x
-$$
-
-## Real Test
-
-$$
-    \begin{aligned}
-        T &= \frac{1}{8}\int_\mathbb{R}\frac{n'(x)^2}{n(x)}\,\mathrm{d}x &&\mid n=\phi^2 \\
-        &= \frac{1}{8}\int_\mathbb{R}\frac{\left(\frac{\mathrm{d}}{\mathrm{d}x}\phi(x)^2\right)^2}{\phi(x)^2}\,\mathrm{d}x \\
-        &= \frac{1}{8}\int_\mathbb{R}\frac{\left(2\phi(x)\phi'(x)\right)^2}{\phi(x)^2}\,\mathrm{d}x \\
-        &= \frac{1}{8}\int_\mathbb{R}\frac{4\phi(x)^2\phi'(x)^2}{\phi(x)^2}\,\mathrm{d}x \\
-        &= \frac{1}{2}\int_\mathbb{R}\phi'(x)^2\,\mathrm{d}x
-    \end{aligned}
 $$

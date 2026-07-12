@@ -10,11 +10,11 @@
 
 - [Snyder, Rupp, Hansen, Müller & Burke - Finding Density Functionals with Machine Learning](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.108.253002)
 
-    Mentioned in Weichselbaums paper.
+    Mentioned in Weichselbaum's paper.
 
 - [Meyer, Weichselbaum & Hauser - Machine Learning Approaches toward Orbital-free Density Functional Theory: Simultaneous Training on the Kinetic Energy Density Functional and Its Functional Derivative](https://pubs.acs.org/doi/10.1021/acs.jctc.0c00580)
 
-    Challenge-Question authors paper.
+    Challenge-Question authors' paper.
 
 - [Ernzerhof - Taylor-series expansion of density functionals](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.50.4593)
 

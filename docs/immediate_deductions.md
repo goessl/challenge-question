@@ -4,9 +4,23 @@
 
 Natural units $\hbar=m=1$ used everywhere like in the [original Challenge-Question document](challenge_question.md).
 
-!!! danger "Natural Units"
+!!! danger "Natural units"
 
     TODO everything with SI-units.
+
+## Function space and representability
+
+We assume all states are representable as position space wavefunctions and they are in $L^2(\mathbb{R})$.
+
+!!! danger "Space of wavefunctions"
+
+    Are all states representable as position space wavefunctions?
+    
+    What is the space of possible wavefunctions?
+    
+    Does Schrödinger eigenstate imply boundedness? Does boundedness imply normalisability. Does normalisability and possiblity of orthogonalisation imply $L^2(\mathbb{R})$?
+    
+    So many questions about the mathematical foundation of quantum mechanics ...
 
 ## Density norm
 
@@ -14,9 +28,9 @@ Particle count.
 
 $$
     \begin{aligned}
-        \int_\mathbb{R}n(x)\,\mathrm{d}x &= \int_\mathbb{R}\sum_{i=0}^{N-1}|\phi_i(x)|^2\,\mathrm{d}x \\
-        &= \sum_{i=0}^{N-1}\int_\mathbb{R}|\phi_i(x)|^2\,\mathrm{d}x &&\mid ||\phi_i||_{L^2(\mathbb{R})}=1 \\
-        &= \sum_{i=0}^{N-1}1 \\
+        \int_\mathbb{R}n(x)\,\mathrm{d}x &= \int_\mathbb{R}\sum_{k=1}^N|\phi_k(x)|^2\,\mathrm{d}x \\
+        &= \sum_{k=1}^N\int_\mathbb{R}|\phi_k(x)|^2\,\mathrm{d}x &&\mid \int_\mathbb{R}|\phi_k(x)|^2\,\mathrm{d}x=||\phi_k||^2=1 \\
+        &= \sum_{k=1}^N1 \\
         &= N
     \end{aligned}
 $$
@@ -27,38 +41,22 @@ More pleasant integral for $T$.
 
 $$
     \begin{aligned}
-        T &= -\frac{1}{2}\int_\mathbb{R}\sum_{i=0}^{N-1}\phi_i^*(x)\phi_i''(x)\,\mathrm{d}x \\
-        &= -\frac{1}{2}\sum_{i=0}^{N-1}\int_\mathbb{R}\phi_i^*(x)\phi_i''(x)\,\mathrm{d}x &&\mid \text{p.I.} \\
-        &= -\frac{1}{2}\sum_{i=0}^{N-1}\left(\phi_i^*\phi_i'\mid_\mathbb{R}-\int_\mathbb{R}|\phi_i'(x)|^2\,\mathrm{d}x\right) &&\mid \phi_i\in\mathcal{S}(\mathbb{R}) \\
-        &= +\frac{1}{2}\sum_{i=0}^{N-1}\int_\mathbb{R}|\phi_i'(x)|^2\,\mathrm{d}x
+        T &= -\frac{1}{2}\int_\mathbb{R}\sum_{k=1}^N\phi_k^*(x)\phi_k''(x)\,\mathrm{d}x \\
+        &= -\frac{1}{2}\sum_{k=1}^N\int_\mathbb{R}\phi_k^*(x)\phi_k''(x)\,\mathrm{d}x &&\mid \text{p.I.} \\
+        &= -\frac{1}{2}\sum_{k=1}^N\left(\phi_k^*\phi_k'\mid_\mathbb{R}-\int_\mathbb{R}|\phi_k'(x)|^2\,\mathrm{d}x\right) &&\mid \phi_k(\pm\infty)=\phi_k'(\pm\infty)=0 \\
+        &= +\frac{1}{2}\sum_{k=1}^N\int_\mathbb{R}|\phi_k'(x)|^2\,\mathrm{d}x
     \end{aligned}
 $$
 
-!!! danger "Space of Wavefunctions"
-
-    What is the space of possible wavefunctions?
-    
-    $L^2(\mathbb{R})$? Should be sufficient to call $\phi_i(\pm\infty)=\phi_i'(\pm\infty)=0$.
-    
-    But just to be sure I've used $\mathcal{S}(\mathbb{R})$ which is already dense in $L^2(\mathbb{R})$.
-    
-    TODO
-
-## Plane Invariance
+## Plane invariance
 
 ### Lemma
 
-The density $\hat{\rho}$ and the kinetic energy $T$ of any pairs of wavefunctions only depends on the plane they lie in, not their orientation within.
+The density $\hat{\rho}$ and the kinetic energy $T$ of any pair of wavefunctions only depend on the plane they lie in, not their orientation within.
 
 ### Proof
 
-Let there be an orthonormal pair of wavefunctions $\phi_1, \phi_2$
-
-$$
-    \braket{\phi_i|\phi_j} = \delta_{ij}
-$$
-
-All other orthonormal pairs of wavefunctions within this plane
+Let there be an orthonormal pair of wavefunctions $\phi_1, \phi_2$. All other orthonormal pairs of wavefunctions within this plane
 
 $$
     \begin{aligned}
@@ -88,18 +86,12 @@ $$
     \braket{\hat{T}}_\psi = \text{tr}\hat{\rho}_\psi\hat{T} = \text{tr}\hat{\rho}_\phi\hat{T} = \braket{\hat{T}}_\phi
 $$
 
-### Explicit orthonormality check
+!!! danger "Generalise"
 
-$$
-    \begin{aligned}
-        \braket{\psi_1|\psi_1} &= \left(\cos\varphi\bra{\phi_1}+\sin\varphi\bra{\phi_2}\right)\left(\cos\varphi\ket{\phi_1}+\sin\varphi\ket{\phi_2}\right) \\
-        &= \cos^2\varphi\braket{\phi_1|\phi_1}+\cos\varphi\sin\varphi\braket{\phi_1|\phi_2}+\cos\varphi\sin\varphi\braket{\phi_2|\phi_1}+\sin^2\varphi\braket{\phi_2|\phi_2} \\
-        &= \cos^2\varphi+\sin^2\varphi = 1 \\
-        \braket{\psi_2|\psi_2} &= \left(\sin\varphi\bra{\phi_1}-\cos\varphi\bra{\phi_2}\right)\left(\sin\varphi\ket{\phi_1}-\cos\varphi\ket{\phi_2}\right) \\
-        &= \sin^2\varphi\braket{\phi_1|\phi_1}-\cos\varphi\sin\varphi\braket{\phi_1|\phi_2}-\cos\varphi\sin\varphi\braket{\phi_2|\phi_1}+\cos^2\varphi\braket{\phi_2|\phi_2} \\
-        &= \cos^2\varphi+\sin^2\varphi = 1 \\
-        \braket{\psi_1|\psi_2} &= \left(\cos\varphi\bra{\phi_1}+\sin\varphi\bra{\phi_2}\right)\left(\sin\varphi\ket{\phi_1}-\cos\varphi\ket{\phi_2}\right) \\
-        &= \cos\varphi\sin\varphi\braket{\phi_1|\phi_1}-\cos^2\varphi\braket{\phi_1|\phi_2}+\sin^2\varphi\braket{\phi_1|\phi_2}-\cos\varphi\sin\varphi\braket{\phi_2|\phi_2} \\
-        &= \cos\varphi\sin\varphi-\cos\varphi\sin\varphi = 0
-    \end{aligned}
-$$
+    Should be possible for any number of particles.
+    
+    Particle states are the eigenstates of $\hat{\rho}$ with eigenvalue $1$, all other eigenvalues are $0$.
+    
+    Eigenvectors are linearly combinable. $\hat{\rho}$ only depends on the span of the states.
+    
+    Something like that.

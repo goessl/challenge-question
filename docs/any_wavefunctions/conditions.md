@@ -2,7 +2,7 @@
 
 ## Question
 
-For a given density $n$ find all pairs of wavefunctions $\phi_1, \phi_2$ such that $n=|\phi_1|^2+|\phi_2|^2$.
+For a given density $n$ find all valid pairs of wavefunctions $\phi_1, \phi_2$ such that $n=|\phi_1|^2+|\phi_2|^2$.
 
 ## Approach
 
@@ -19,13 +19,13 @@ $$
 
 ### Density
 
-*Pointwise density* requires the solution of [Scalars](scalars.md) with some function $\alpha:\mathbb{R}\to\mathbb{R}$ and phases $\varphi_1,\varphi_2:\mathbb{R}\to\mathbb{R}$:
+*Pointwise density* requires the solution of [scalars](scalars.md) with some angle $\alpha:\mathbb{R}\to\mathbb{R}$ and phases $\varphi_1,\varphi_2:\mathbb{R}\to\mathbb{R}$ stretched over the whole real axis:
 
 $$
     \phi_1(x)=e^{i\varphi_1(x)}\sqrt{n(x)}\cos\alpha(x) \qquad \phi_2(x)=e^{i\varphi_2(x)}\sqrt{n(x)}\sin\alpha(x)
 $$
 
-The other requirements now become
+The remaining requirements become
 
 $$
     \begin{array}{ll}
@@ -50,7 +50,7 @@ $$
     \end{aligned}
 $$
 
-Which means the *normalisation of $\phi_2$* can be dropped, leaving:
+Leaving the remaining requirements as
 
 $$
     \begin{array}{ll}
@@ -85,7 +85,7 @@ $$
     \end{array}
 $$
 
-### Real Orthogonalisation
+### Real orthogonalisation
 
 For the real case $\Delta\varphi=0$ the two requirements for $\alpha$ can further be reduced to a single *real orthonormalisation* requirement:
 
@@ -104,6 +104,8 @@ $$
         \text{real orthonormalisation:} \quad 0 &= \int_\mathbb{R}n(x)e^{i2\alpha(x)}\,\mathrm{d}x
     \end{aligned}
 $$
+
+Have to admit that this is quite a nice little intermediate result.
 
 ## Solution
 

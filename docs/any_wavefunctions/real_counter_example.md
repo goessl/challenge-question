@@ -1,6 +1,8 @@
 # Real Counter Example
 
-To find a counter example to the challenge, we just have to find two sets of wavefunctions $\{\phi_1, \phi_2\}$ with the same density $n$ and different kinetic energy $T$.
+Constructiveness is followed by destructiveness.
+
+To disprove the chosen approach, we just have to find two pairs of wavefunctions $\{\phi_1, \phi_2\}$ with the same density $n$ and different kinetic energy $T$.
 
 ## First set
 
@@ -8,8 +10,8 @@ Let's choose the trivial wavefunction pair
 
 $$
     \begin{aligned}
-        \phi_1(x) &= h_0(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}}H_0(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}} && \text{where $h_n$ are the Hermite functions} \\
-        \phi_2(x) &= h_1(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{2\sqrt{\pi}}}H_1(x) = \sqrt{\frac{2}{\sqrt{\pi}}}e^{-\frac{x^2}{2}}x && \text{where $H_n$ are the Hermite polynomials}
+        \phi_1(x) &= h_0(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}}H_0(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}} && \text{where $h_j$ are the Hermite functions} \\
+        \phi_2(x) &= h_1(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{2\sqrt{\pi}}}H_1(x) = \sqrt{\frac{2}{\sqrt{\pi}}}e^{-\frac{x^2}{2}}x && \text{where $H_j$ are the Hermite polynomials}
     \end{aligned}
 $$
 
@@ -75,9 +77,9 @@ $$
         &\qquad\mid \frac{4x^6-4x^4+x^2}{2x^2+1}=2x^4-3x^2+2-\frac{2}{2x^2+1} \\
         &\qquad\mid \left(2x^2+1\right)^3=8x^6+12x^4+6x^2+1 \\
         &= \frac{1}{8}\int_\mathbb{R}\frac{4}{\sqrt{\pi}}e^{-x^2}\left(2x^4-3x^2+2-\frac{2}{2x^2+1}\right)+\sqrt{\pi}e^{-3x^2}\left(8x^6+12x^4+6x^2+1\right)\,\mathrm{d}x \\
-        &\qquad\mid \int_\mathbb{R}e^{-ax^2}x^n\,\mathrm{d}x=\begin{cases}
-            \sqrt{\frac{\pi}{a}}\frac{(n-1)!!}{(2a)^\frac{n}{2}} & n\in\mathbb{G} \\
-            0 & n\in\mathbb{U}
+        &\qquad\mid \int_\mathbb{R}e^{-ax^2}x^j\,\mathrm{d}x=\begin{cases}
+            \sqrt{\frac{\pi}{a}}\frac{(j-1)!!}{(2a)^\frac{j}{2}} & j\in\mathbb{G} \\
+            0 & j\in\mathbb{U}
         \end{cases} \\
         &\qquad\mid \int_\mathbb{R}\frac{e^{-x^2}}{2x^2+1}\,\mathrm{d}x=\sqrt{\frac{e}{2}}\pi\text{erfc}\frac{1}{\sqrt{2}} \\
         &= \frac{1}{8}\left(\frac{4}{\sqrt{\pi}}\left(2\sqrt{\pi}\frac{3!!}{2^2}-3\sqrt{\pi}\frac{1!!}{2^1}+2\sqrt{\pi}\frac{(-1)!!}{2^0}-2\sqrt{\frac{e}{2}}\pi\text{erfc}\frac{1}{\sqrt{2}}\right)\right. \\

@@ -77,4 +77,5 @@ nav:
     - any_wavefunctions/explicit_real_construction.md
     - any_wavefunctions/real_counter_example.md
     - any_wavefunctions/discussion.md
+  - conventions.md
   - further_readings.md

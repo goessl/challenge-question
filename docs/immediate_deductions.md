@@ -83,7 +83,7 @@ $$
 and the same kinetic energy
 
 $$
-    \braket{\hat{T}}_\psi = \text{tr}\hat{\rho}_\psi\hat{T} = \text{tr}\hat{\rho}_\phi\hat{T} = \braket{\hat{T}}_\phi
+    \braket{\hat{T}}_\psi = \text{tr}\,\hat{\rho}_\psi\hat{T} = \text{tr}\,\hat{\rho}_\phi\hat{T} = \braket{\hat{T}}_\phi
 $$
 
 !!! danger "Generalise"

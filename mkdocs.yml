@@ -77,5 +77,14 @@ nav:
     - any_wavefunctions/explicit_real_construction.md
     - any_wavefunctions/real_counter_example.md
     - any_wavefunctions/discussion.md
+  - Going Vectorial:
+    - going_vectorial/choosing_a_basis.md
+    - going_vectorial/oh_look_a_polynomial.md
+    - going_vectorial/roadmap.md
+    - going_vectorial/degree_0.md
+    - going_vectorial/degree_1_-_full_occupation.md
+    - Degree 2:
+      - going_vectorial/degree_2/degree_2_-_orthonormal_complement.md
+      - going_vectorial/degree_2/degree_2_-_explicit_example.md
   - conventions.md
   - further_readings.md

@@ -15,5 +15,11 @@
     
     - Most bases in functional analysis start at zero. E.g. polynomials & Hermite functions.
     - Harmonic oscillator eigenstates often enumerated with $j$.
+    
+    This also leaves $i$ as the imaginary unit, as it is used in physics, and breaks my engineering heart.
 
-This also leaves $i$ as the imaginary unit, as it is used in physics, and breaks my engineering heart.
+- Trace order
+
+    $\braket{\hat{O}} = \text{tr}\,\hat{\rho}\hat{O}$
+    
+    as in Evertz QM 2023 eq. 9.10.

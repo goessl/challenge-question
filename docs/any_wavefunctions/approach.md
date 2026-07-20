@@ -1,13 +1,12 @@
 # Approach
 
-If all information required to determine the kinetic energy $T$ were contained in the density $n$, then all ensembles of wavefunctions $\{\phi_k\}$ that reproduce the same density $n$, would necessarily yield the same kinetic energy $T$.
+As mentioned in [Challenge](../challenge.md): Hohenberg & Kohn required $n$ to be in the ground state.
 
-It would then follow that, for a given density $n$, the kinetic energy $T$ could be obtained by constructing any single one of the possibly infinitely many wavefunction ensembles $\{\phi_k\}$ reproducing $n$.
+But what if it isn't?
 
-!!! danger "Missing restrictions"
+We will
 
-    This assumption above will later turn out to be wrong.
-    
-    The requirement for the ensemble to be the ground state was missing.
-    
-    More on that in the [discussion](discussion.md).
+1. describe the set of all ensembles $\left\{\phi_1, \phi_2\right\}$ yielding a given particle density $n$,
+2. find a way to always construct one such ensemble,
+3. use it to show that there can be different ensembles with the same particle density and different kinetic energies and
+4. discuss the consequences and adapt the path of this nightmare.

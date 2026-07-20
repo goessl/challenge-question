@@ -8,7 +8,7 @@ More precisely:
 
 $$
     \begin{gathered}
-        \text{dim}\,\mathcal{H}=N \quad \text{or equivalently} \quad \mathcal{H}=\text{ran}\left\{\phi_k\right\}_{k\in\{1, 2, \dots, N\}} \\
+        \text{dim}\,\mathcal{H}=N \quad \text{or equivalently} \quad \mathcal{H}=\text{ran}\left\{\phi_k\right\}_{k=1}^N \\
         \Downarrow \\
         \hat{\rho}=1 \qquad \braket{\hat{T}}=\text{tr}\,\hat{T}=\text{const.}
     \end{gathered}

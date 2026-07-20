@@ -53,7 +53,7 @@ to parametrise all *oriented* orthonormal pairs in $\mathbb{R}^3$.
     
     The $\vec{v}\doteq\ket{v}$ is usual in quantum mechanics, but using the symbols as angles and vectors simplifies the upcoming coefficient indexing ($\theta_1$ is easier to read than $(\vec{e}_\theta)_1$).
 
-(But because of the [plane invariance](../../immediate_deductions.md#plane-invariance) we could ditch $\psi$ right here already and continue with $\vec{\theta}$ & $\vec{\varphi}$ as states. It would just change the measure by a constant factor. Let's keep it for the beginning for completeness.)
+(But because of the [plane invariance](../../immediate_deductions.md#unitary-decomposition-invariance) we could ditch $\psi$ right here already and continue with $\vec{\theta}$ & $\vec{\varphi}$ as states. It would just change the measure by a constant factor. Let's keep it for the beginning for completeness.)
 
 ## States
 
@@ -99,31 +99,23 @@ Here we can already see that $\ket{r}$ is actually the hole state! Nice!
 $$
     \begin{aligned}
         n(x) &= \vec{h}(x)^T\rho\vec{h}(x) \\
-        &= \begin{matrix}
-            -h_0(x)^2(r_0^2-1) & -2h_0(x)h_1(x)r_0r_1 & -2h_0(x)h_2(x)r_0r_2 \\
-                               & -h_1(x)^2(r_1^2-1)   & -2h_1(x)h_2(x)r_1r_2 \\
-                               &                      & -h_2(x)^2(r_2^2-1)
-        \end{matrix} \\
-        &= h_0(x)^2+h_1(x)^2+h_2(x)^2 \\
-        &\quad \begin{matrix}
-            -(h_0(x)^2r_0^2 & +2h_0(x)h_1(x)r_0r_1 & +2h_0(x)h_2(x)r_0r_2 \\
-                            & +h_1(x)^2r_1^2       & +2h_1(x)h_2(x)r_1r_2 \\
-                            &                      & +h_2(x)^2r_2^2)
-        \end{matrix} \\
+        &= \frac{e^{-x^2}}{\sqrt{\pi}} \\
+        &\quad \left(2\left(1-r_2^2\right)x^4 \right. \\
+        &\quad -4r_1r_2x^3 \\
+        &\quad +2\left(-\sqrt{2}r_0r_2-r_1^2+r_2^2\right)x^2 \\
+        &\quad +2\left(-\sqrt{2}r_0r_1+r_1r_2\right)x \\
+        &\quad \left.-r_0^2+\sqrt{2}r_0r_2-\frac{r_2^2}{2}+\frac{3}{2} \right) \\
         n^\perp(x) &= h_0(x)^2+h_1(x)^2+h_2(x)^2 - n(x) \\
-        &= \begin{matrix}
-            h_0(x)^2r_0^2 & +2h_0(x)h_1(x)r_0r_1 & +2h_0(x)h_2(x)r_0r_2 \\
-                          & +h_1(x)^2r_1^2       & +2h_1(x)h_2(x)r_1r_2 \\
-                          &                      & +h_2(x)^2r_2^2
-        \end{matrix}
+        &= \frac{e^{-x^2}}{\sqrt{\pi}} \\
+        &\quad \left(2r_2^2x^4 \right. \\
+        &\quad +4r_1r_2x^3 \\
+        &\quad +2\left(\sqrt{2}r_0r_2+r_1^2-r_2^2\right)x^2 \\
+        &\quad +2\left(\sqrt{2}r_0r_1-r_1r_2\right)x \\
+        &\quad \left.+r_0^2-\sqrt{2}r_0r_2+\frac{r_2^2}{2}\right)
     \end{aligned}
 $$
 
 *Isn't it strange that the normal vector on a plane is usually denoted as $n$, and here the plane normal vector describes the densities $n^{(\perp)}$?*
-
-!!! danger "Untangle"
-
-    TODO: Write out the Gaussian times polynomial such that the properties of $g$ can be checked easily.
 
 ## Kinetic energy
 
@@ -152,22 +144,22 @@ And our formula predicts
 $$
     \begin{aligned}
         \braket{\hat{T}} &= \frac{9}{4}-T[n^\perp] \\
-        &= \frac{9}{4}-\frac{1}{8}\int_\mathbb{R}\frac{(n^\perp)'(x)^2}{n^\perp(x)}\,\mathrm{d}x
+        &= \frac{9}{4}-\frac{1}{8}\int_\mathbb{R}\frac{n^\perp{}'(x)^2}{n^\perp(x)}\,\mathrm{d}x
     \end{aligned}
 $$
 
 where we substitute in an educated guess
 
 $$
-    g(x) = \sqrt{2}r_0-r_2+2r_1x+2r_2x^2
+    r(x) = \frac{e^\frac{-x^2}{2}}{\sqrt[4]{\pi}}\left(\sqrt{2}r_2x^2+\sqrt{2}r_1x+r_0-\frac{r_2}{\sqrt{2}}\right)
 $$
 
 that luckily has the following properties
 
 $$
     \begin{aligned}
-        n^\perp(x) &= \frac{e^{-x^2}}{2\sqrt{\pi}}g(x)^2 \\
-        (n^\perp)'(x) &= \frac{e^{-x^2}}{\sqrt{\pi}}g(x)\left(g'(x)-xg(x)\right)
+        n^\perp(x) &= r(x)^2 \\
+        n^\perp{}'(x) &= 2r(x)r'(x)
     \end{aligned}
 $$
 
@@ -175,10 +167,9 @@ because of which we can solve the Gaussian-rational integral easily
 
 $$
     \begin{aligned}
-        \braket{\hat{T}} &= \frac{9}{4}-\frac{1}{8}\int_\mathbb{R}\frac{(n^\perp)'(x)^2}{n^\perp(x)}\,\mathrm{d}x \\
-        &= \frac{9}{4}-\frac{1}{8}\int_\mathbb{R}\frac{\left(\frac{e^{-x^2}}{\sqrt{\pi}}g(x)\left(g'(x)-xg(x)\right)\right)^2}{\frac{e^{-x^2}}{2\sqrt{\pi}}g(x)^2}\,\mathrm{d}x \\
-        &= \frac{9}{4}-\frac{1}{8}\int_\mathbb{R}\frac{\frac{e^{-2x^2}}{\pi}g(x)^2\left(g'(x)-xg(x)\right)^2}{\frac{e^{-x^2}}{2\sqrt{\pi}}g(x)^2}\,\mathrm{d}x \\
-        &= \frac{9}{4}-\frac{1}{4\sqrt{\pi}}\int_\mathbb{R}e^{-x^2}\left(g'(x)-xg(x)\right)^2\,\mathrm{d}x \\
+        \braket{\hat{T}} &= \frac{9}{4}-\frac{1}{8}\int_\mathbb{R}\frac{n^\perp{}'(x)^2}{n^\perp(x)}\,\mathrm{d}x \\
+        &= \frac{9}{4}-\frac{1}{8}\int_\mathbb{R}\frac{\left(2r(x)r'(x)\right)^2}{r(x)^2}\,\mathrm{d}x \\
+        &= \frac{9}{4}-\frac{1}{2}\int_\mathbb{R}r'(x)^2\,\mathrm{d}x \\
         &= 2-\frac{r_1^2}{2}-r_2^2+\frac{r_0r_2}{\sqrt{2}}
     \end{aligned}
 $$

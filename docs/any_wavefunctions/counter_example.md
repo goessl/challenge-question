@@ -1,8 +1,8 @@
-# Real Counter Example
+# Counter Example
 
-Constructiveness is followed by destructiveness.
+*Constructiveness is followed by destructiveness.*
 
-To disprove the chosen approach, we just have to find two pairs of wavefunctions $\{\phi_1, \phi_2\}$ with the same density $n$ and different kinetic energy $T$.
+Now we show that there may be multiple ensembles $\{\phi_1, \phi_2\}$ and $\{\psi_1, \psi_2\}$ with the same density $n$ and different kinetic energies $\braket{\hat{T}}_\phi\neq\braket{\hat{T}}_\psi$.
 
 ## First set
 
@@ -10,8 +10,10 @@ Let's choose the trivial wavefunction pair
 
 $$
     \begin{aligned}
-        \phi_1(x) &= h_0(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}}H_0(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}} && \text{where $h_j$ are the Hermite functions} \\
-        \phi_2(x) &= h_1(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{2\sqrt{\pi}}}H_1(x) = \sqrt{\frac{2}{\sqrt{\pi}}}e^{-\frac{x^2}{2}}x && \text{where $H_j$ are the Hermite polynomials}
+        \phi_1(x) &= h_0(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}}H_0(x) \\
+        &= \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}} && \text{where $h_j$ are the Hermite functions} \\
+        \phi_2(x) &= h_1(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{2\sqrt{\pi}}}H_1(x) \\
+        &= \sqrt{\frac{2}{\sqrt{\pi}}}e^{-\frac{x^2}{2}}x && \text{where $H_j$ are the Hermite polynomials}
     \end{aligned}
 $$
 
@@ -39,7 +41,7 @@ and their kinetic energy
 
 $$
     \begin{aligned}
-        T &= \frac{1}{2}\int_\mathbb{R}\phi_1'(x)^2+\phi_2'(x)^2\,\mathrm{d}x \\
+        \braket{\hat{T}}_\phi &= \frac{1}{2}\int_\mathbb{R}\phi_1'(x)^2+\phi_2'(x)^2\,\mathrm{d}x \\
         &= \frac{1}{2}\int_\mathbb{R}\left(-\frac{e^{-\frac{x^2}{2}}x}{\sqrt{\sqrt{\pi}}}\right)^2+\left(-\sqrt{\frac{2}{\sqrt{\pi}}}e^{-\frac{x^2}{2}}(x^2-1)\right)^2\,\mathrm{d}x \\
         &= \frac{1}{2}\int_\mathbb{R}\frac{e^{-x^2}x^2}{\sqrt{\pi}}+\frac{2e^{-x^2}}{\sqrt{\pi}}(x^4-2x^2+1)\,\mathrm{d}x \\
         &= \frac{1}{2\sqrt{\pi}}\int_\mathbb{R}e^{-x^2}(2x^4-3x^2+2)\,\mathrm{d}x \\
@@ -50,18 +52,22 @@ $$
 
 ## Second set
 
-Now we can construct some "virtual" wavefunctions with the same density like described in [Explicit real Construction](explicit_real_construction.md):
+Now we can construct some *virtual* wavefunctions with the same density like described in [Explicit Construction](explicit_construction.md):
 
 $$
     \begin{aligned}
         s(x) &= \int_{-\infty}^xn(y)\,\mathrm{d}y \\
-        &= \int_{-\infty}^x\frac{e^{-y^2}}{\sqrt{\pi}}\left(2y^2+1\right)\,\mathrm{d}y &&= \text{erf}(x)+1-\frac{e^{-x^2}x}{\sqrt{\pi}} \\
+        &= \int_{-\infty}^x\frac{e^{-y^2}}{\sqrt{\pi}}\left(2y^2+1\right)\,\mathrm{d}y \\
+        &= \text{erf}(x)+1-\frac{e^{-x^2}x}{\sqrt{\pi}} \\
         \alpha(x) &= \frac{\pi}{2}s(x) \\
-        &= \frac{\pi}{2}\left(\text{erf}(x)-\frac{e^{-x^2}x}{\sqrt{\pi}}+1\right) &&= \frac{\pi}{2}(\text{erf}(x)+1)-\frac{\sqrt{\pi}}{2}e^{-x^2}x \\
-        \phi_1(x) &= \sqrt{n(x)}\cos\alpha(x) \\
-        &= \sqrt{\frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^2+1\right)}\cos\left(\frac{\pi}{2}(\text{erf}(x)+1)-\frac{\sqrt{\pi}}{2}e^{-x^2}x\right) &&= \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}}\sqrt{2x^2+1}\cos\left(\frac{\pi}{2}(\text{erf}(x)+1)-\frac{\sqrt{\pi}}{2}e^{-x^2}x\right) \\
-        \phi_2(x) &= \sqrt{n(x)}\sin\alpha(x) \\
-        &= \sqrt{\frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^2+1\right)}\sin\left(\frac{\pi}{2}(\text{erf}(x)+1)-\frac{\sqrt{\pi}}{2}e^{-x^2}x\right) &&= \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}}\sqrt{2x^2+1}\sin\left(\frac{\pi}{2}(\text{erf}(x)+1)-\frac{\sqrt{\pi}}{2}e^{-x^2}x\right)
+        &= \frac{\pi}{2}\left(\text{erf}(x)-\frac{e^{-x^2}x}{\sqrt{\pi}}+1\right) \\
+        &= \frac{\pi}{2}(\text{erf}(x)+1)-\frac{\sqrt{\pi}}{2}e^{-x^2}x \\
+        \psi_1(x) &= \sqrt{n(x)}\cos\alpha(x) \\
+        &= \sqrt{\frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^2+1\right)}\cos\left(\frac{\pi}{2}(\text{erf}(x)+1)-\frac{\sqrt{\pi}}{2}e^{-x^2}x\right) \\
+        &= \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}}\sqrt{2x^2+1}\cos\left(\frac{\pi}{2}(\text{erf}(x)+1)-\frac{\sqrt{\pi}}{2}e^{-x^2}x\right) \\
+        \psi_2(x) &= \sqrt{n(x)}\sin\alpha(x) \\
+        &= \sqrt{\frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^2+1\right)}\sin\left(\frac{\pi}{2}(\text{erf}(x)+1)-\frac{\sqrt{\pi}}{2}e^{-x^2}x\right) \\
+        &= \frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}}\sqrt{2x^2+1}\sin\left(\frac{\pi}{2}(\text{erf}(x)+1)-\frac{\sqrt{\pi}}{2}e^{-x^2}x\right)
     \end{aligned}
 $$
 
@@ -69,11 +75,11 @@ Their kinetic energy is
 
 $$
     \begin{aligned}
-        T &= \frac{1}{8}\int_\mathbb{R}\frac{n'^2(x)}{n(x)}+\pi^2n^3(x)\,\mathrm{d}x \\
+        \braket{\hat{T}}_\psi &= \frac{1}{8}\int_\mathbb{R}\frac{n'^2(x)}{n(x)}+\pi^2n^3(x)\,\mathrm{d}x \\
         &= \frac{1}{8}\int_\mathbb{R}\frac{\left(\frac{\mathrm{d}}{\mathrm{d}x}\frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^2+1\right)\right)^2}{\frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^2+1\right)}+\pi^2\left(\frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^2+1\right)\right)^3\,\mathrm{d}x \\
         &= \frac{1}{8}\int_\mathbb{R}\frac{\left(-2\frac{e^{-x^2}}{\sqrt{\pi}}(2x^3-x)\right)^2}{\frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^2+1\right)}+\pi^2\left(\frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^2+1\right)\right)^3\,\mathrm{d}x \\
         &= \frac{1}{8}\int_\mathbb{R}\frac{4\frac{e^{-2x^2}}{\pi}(2x^3-x)^2}{\frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^2+1\right)}+\pi^2\frac{e^{-3x^2}}{\sqrt{\pi}^3}\left(2x^2+1\right)^3\,\mathrm{d}x \\
-        &= \frac{1}{8}\int_\mathbb{R}\frac{4}{\sqrt{\pi}}e^{-x^2}\frac{4x^6-4x^4+x^2}{2x^2+1}+\frac{\sqrt{\pi}}{8}e^{-3x^2}\left(2x^2+1\right)^3\,\mathrm{d}x \\
+        &= \frac{1}{8}\int_\mathbb{R}\frac{4}{\sqrt{\pi}}e^{-x^2}\frac{4x^6-4x^4+x^2}{2x^2+1}+\sqrt{\pi}e^{-3x^2}\left(2x^2+1\right)^3\,\mathrm{d}x \\
         &\qquad\mid \frac{4x^6-4x^4+x^2}{2x^2+1}=2x^4-3x^2+2-\frac{2}{2x^2+1} \\
         &\qquad\mid \left(2x^2+1\right)^3=8x^6+12x^4+6x^2+1 \\
         &= \frac{1}{8}\int_\mathbb{R}\frac{4}{\sqrt{\pi}}e^{-x^2}\left(2x^4-3x^2+2-\frac{2}{2x^2+1}\right)+\sqrt{\pi}e^{-3x^2}\left(8x^6+12x^4+6x^2+1\right)\,\mathrm{d}x \\
@@ -88,7 +94,7 @@ $$
         &\qquad \left.+\frac{\pi}{\sqrt{3}}\left(8\frac{15}{216}+12\frac{3}{36}+6\frac{1}{6}+1\right)\right) \\
         &= \frac{1}{8}\left(8-8\sqrt{\frac{e\pi}{2}}\text{erfc}\frac{1}{\sqrt{2}}+\frac{\pi}{\sqrt{3}}\frac{32}{9}\right) \\
         &= 1+\frac{\pi}{\sqrt{3}}\frac{4}{9}-\sqrt{\frac{e\pi}{2}}\text{erfc}\frac{1}{\sqrt{2}} \\
-        &= 1.150\dots
+        &= 1.150\dots \neq \braket{\hat{T}}_\phi=1
     \end{aligned}
 $$
 

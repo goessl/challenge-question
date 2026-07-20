@@ -66,7 +66,7 @@ $$
     \end{pmatrix} = \frac{9}{4}
 $$
 
-The orthonormal complement (here the [polynomial part representation](../oh_look_a_polynomial.md) becomes useful):
+The orthonormal complement (here the [polynomial part representation](../products/oh_look_a_polynomial.md) becomes useful):
 
 $$
     \begin{aligned}

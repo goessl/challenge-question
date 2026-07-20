@@ -1,8 +1,14 @@
-# Explicit Real Construction
+# Explicit Construction
 
-## Question
+## Task
 
-For a given density $n$ find any pair of valid real wavefunctions $\phi_1, \phi_2$ such that $n=\phi_1^2+\phi_2^2$.
+For an appropriate particle density $n$ explicitly write down one valid underlying wavefunction pair.
+
+$$
+    \left\{\phi_1, \phi_2\right\} \ \mid \ \phi_1, \phi_2 \in L^2(\mathbb{R}), \ \braket{\phi_k|\phi_l}=\delta_{kl}, \ n=|\phi_1|^2+|\phi_2|^2
+$$
+
+*Appropriate meaning that there is a solution.*
 
 ## Solution
 
@@ -25,7 +31,7 @@ $$
 
 ## Proof
 
-In [conditions](conditions.md) it was shown that the wavefunctions must have the structure
+In [whole solution set](whole_solution_set.md) it was shown that the wavefunctions must have the structure
 
 $$
     \begin{aligned}

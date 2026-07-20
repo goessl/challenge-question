@@ -72,19 +72,24 @@ nav:
   - single_particle.md
   - Any Wavefunctions:
     - any_wavefunctions/approach.md
-    - any_wavefunctions/scalars.md
-    - any_wavefunctions/conditions.md
-    - any_wavefunctions/explicit_real_construction.md
-    - any_wavefunctions/real_counter_example.md
+    - any_wavefunctions/whole_solution_set.md
+    - any_wavefunctions/explicit_construction.md
+    - any_wavefunctions/counter_example.md
     - any_wavefunctions/discussion.md
   - Going Vectorial:
     - going_vectorial/choosing_a_basis.md
-    - going_vectorial/oh_look_a_polynomial.md
+    - Products:
+      - going_vectorial/products/oh_look_a_polynomial.md
+      - going_vectorial/products/series_representation_where_there_shouldnt_be_one.md
     - going_vectorial/roadmap.md
     - going_vectorial/degree_0.md
     - going_vectorial/degree_1_-_full_occupation.md
     - Degree 2:
       - going_vectorial/degree_2/degree_2_-_orthonormal_complement.md
       - going_vectorial/degree_2/degree_2_-_explicit_example.md
+    - Degree 3 - Lots of Basic Algebra:
+      - going_vectorial/degree_3_lots_of_basic_algebra/linear_equations.md
+      - going_vectorial/degree_3_lots_of_basic_algebra/actually_degree_2_again_first.md
+  - quantum_mechanics_basics.md
   - conventions.md
   - further_readings.md

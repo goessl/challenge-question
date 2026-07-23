@@ -1,6 +1,7 @@
 # Roadmap
 
-We've already found a solution for one particle, therefore the only sane next step would be to go for two particles and gradually bump up the degree $D$
+We've already found a solution for one particle and have showed that the two particle solution is a possibly infinite dimensional search.
+Therefore the only sane next step would be to go for two particles in finite degree $D$ and gradually bump it up.
 
 - [x] one particle
 - [ ] two particles

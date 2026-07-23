@@ -85,3 +85,32 @@ $$
         &= \frac{1}{2\sqrt{\pi}}\sum_{k=1}^N\int_\mathbb{R}e^{-x^2}\left|p_{\phi_k'}(x)\right|^2\,\mathrm{d}x
     \end{aligned}
 $$
+
+## Gaussian-polynomial integral
+
+From [Gaussian integral - Wikipedia](https://en.wikipedia.org/wiki/Gaussian_integral#Integrals_of_similar_form) we know
+
+$$
+    \int_\mathbb{R}x^{2n}e^{-\alpha x^2}dx = \sqrt{\frac{\pi}{\alpha}}\frac{(2n-1)!!}{(2\alpha)^n}.
+$$
+
+Therefore
+
+$$
+    \begin{aligned}
+        \int_\mathbb{R}e^{-ax^2}p(x)dx &= \sum_np_n\int_\mathbb{R}e^{-ax^2}x^ndx \\
+        &= \sum_np_{2n}\int_\mathbb{R}e^{-ax^2}x^{2n}dx \\
+        &= \sqrt{\frac{\pi}{a}}\sum_np_{2n}\frac{(2n-1)!!}{(2a)^n} \\
+        &= \sqrt{\frac{\pi}{a}}\sum_np_{2n}\frac{(2n)!}{2^{2n}n!a^n}
+    \end{aligned}
+$$
+
+```python
+from sympy import *
+from scipy.special import factorial2
+
+def gauss_poly_int(p, a=1):
+    r"""Return $\int_\mathbb{R}e^{-ax^2}p(x)\,\mathrm{d}x$."""
+    #factorial2 falsely returns 0 for -1 instead of 1
+    return sqrt(pi/a) * sum(p2n * Rational(factorial2(2*n-1), (2*a)**n) if n>0 else p2n for n, p2n in enumerate(p[::2]))
+```

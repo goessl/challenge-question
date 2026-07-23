@@ -60,3 +60,17 @@ $$
         \end{pmatrix}.
     \end{aligned}
 $$
+
+```python
+from sympy import *
+
+def T_matrix(D):
+    T = zeros(D+1, D+1)
+    for i in range(D+1):
+        T[i, i] = 2*i + 1
+    for i in range(D-1):
+        T[i, i+2] = -sqrt((i+1)*(i+2))
+        T[i+2, i] = -sqrt((i+1)*(i+2))
+    T /= 4
+    return T
+```

@@ -1,6 +1,45 @@
-# Degree 2 - Explicit Example
+# Explicit Example
 
-Let's explicitly examine $\mathcal{H}=\text{ran}\,\left\{\ket{0}, \ket{1}, \ket{2}\right\}$ (and $N=2$) with a full parametrisation.
+The basis:
+
+$$
+    \left(\ket{0}, \ket{1}, \ket{2}\right)
+$$
+
+The full-space kinetic energy:
+
+$$
+    \text{tr}\,\hat{T} = \text{tr}\,\frac{1}{4}\begin{pmatrix}
+                1 &         0 & -\sqrt{2} \\
+                0 &         3 &         0 \\
+        -\sqrt{2} &         0 &         5
+    \end{pmatrix} = \frac{9}{4}
+$$
+
+The orthonormal complement (here the [polynomial part representation](../products/oh_look_a_polynomial.md) becomes useful):
+
+$$
+    \begin{aligned}
+        n^\perp(x) &= h_0(x)^2+h_1(x)^2+h_2(x)^2-n(x) \\
+        &= \left(\frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}}\right)^2+\left(\frac{e^{-\frac{x^2}{2}}2x}{\sqrt{2\sqrt{\pi}}}\right)^2+\left(\frac{e^{-\frac{x^2}{2}}(4x^2-2)}{\sqrt{8\sqrt{\pi}}}\right)^2-n(x) \\
+        &= \frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^4+\frac{3}{2}\right)-n(x) \\
+        &= \frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^4+\frac{3}{2}-p_n(x)\right) \\
+        n^\perp{}'(x) &= \frac{e^{-x^2}}{\sqrt{\pi}}\left(-4x^5+8x^3-3x\right)-n'(x) \\
+        &= \frac{e^{-x^2}}{\sqrt{\pi}}\left(-4x^5+8x^3-3x-p_{n'}(x)\right)
+    \end{aligned}
+$$
+
+The kinetic energy:
+
+$$
+    \begin{aligned}
+        \braket{\hat{T}} &= \frac{9}{4}-\frac{1}{8}\int_\mathbb{R}\frac{n^\perp{}'(x)^2}{n^\perp(x)}\,\mathrm{d}x \\
+        &= \frac{9}{4}-\frac{1}{8}\int_\mathbb{R}\frac{\left(\frac{e^{-x^2}}{\sqrt{\pi}}\left(-4x^5+8x^3-3x\right)-n'(x)\right)^2}{\frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^4+\frac{3}{2}\right)-n(x)}\,\mathrm{d}x \\
+        &= \frac{9}{4}-\frac{1}{4\sqrt{\pi}}\int_\mathbb{R}e^{-x^2}\frac{\left(-4x^5+8x^3-3x-p_{n'}(x)\right)^2}{4x^4+3-2p_n(x)}\,\mathrm{d}x
+    \end{aligned}
+$$
+
+But additionaly we also want to have a look at the explicit parametrisation of all possible configuration as it comes together quite nicely.
 
 ## Parametrisation of 3D orthonormal pairs and their orthogonal complement
 
@@ -100,18 +139,18 @@ $$
     \begin{aligned}
         n(x) &= \vec{h}(x)^T\rho\vec{h}(x) \\
         &= \frac{e^{-x^2}}{\sqrt{\pi}} \\
-        &\quad \left(2\left(1-r_2^2\right)x^4 \right. \\
-        &\quad -4r_1r_2x^3 \\
-        &\quad +2\left(-\sqrt{2}r_0r_2-r_1^2+r_2^2\right)x^2 \\
-        &\quad +2\left(-\sqrt{2}r_0r_1+r_1r_2\right)x \\
-        &\quad \left.-r_0^2+\sqrt{2}r_0r_2-\frac{r_2^2}{2}+\frac{3}{2} \right) \\
+        &\qquad \left(2\left(1-r_2^2\right)x^4 \right. \\
+        &\qquad -4r_1r_2x^3 \\
+        &\qquad +2\left(-\sqrt{2}r_0r_2-r_1^2+r_2^2\right)x^2 \\
+        &\qquad +2\left(-\sqrt{2}r_0r_1+r_1r_2\right)x \\
+        &\qquad \left.-r_0^2+\sqrt{2}r_0r_2-\frac{r_2^2}{2}+\frac{3}{2} \right) \\
         n^\perp(x) &= h_0(x)^2+h_1(x)^2+h_2(x)^2 - n(x) \\
         &= \frac{e^{-x^2}}{\sqrt{\pi}} \\
-        &\quad \left(2r_2^2x^4 \right. \\
-        &\quad +4r_1r_2x^3 \\
-        &\quad +2\left(\sqrt{2}r_0r_2+r_1^2-r_2^2\right)x^2 \\
-        &\quad +2\left(\sqrt{2}r_0r_1-r_1r_2\right)x \\
-        &\quad \left.+r_0^2-\sqrt{2}r_0r_2+\frac{r_2^2}{2}\right)
+        &\qquad \left(2r_2^2x^4 \right. \\
+        &\qquad +4r_1r_2x^3 \\
+        &\qquad +2\left(\sqrt{2}r_0r_2+r_1^2-r_2^2\right)x^2 \\
+        &\qquad +2\left(\sqrt{2}r_0r_1-r_1r_2\right)x \\
+        &\qquad \left.+r_0^2-\sqrt{2}r_0r_2+\frac{r_2^2}{2}\right)
     \end{aligned}
 $$
 

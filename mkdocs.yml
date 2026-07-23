@@ -83,13 +83,16 @@ nav:
       - going_vectorial/products/series_representation_where_there_shouldnt_be_one.md
     - going_vectorial/roadmap.md
     - going_vectorial/degree_0.md
-    - going_vectorial/degree_1_-_full_occupation.md
+    - Degree 1:
+      - going_vectorial/degree_1/full_occupation.md
+      - going_vectorial/degree_1/explicit_example.md
     - Degree 2:
-      - going_vectorial/degree_2/degree_2_-_orthonormal_complement.md
-      - going_vectorial/degree_2/degree_2_-_explicit_example.md
-    - Degree 3 - Lots of Basic Algebra:
-      - going_vectorial/degree_3_lots_of_basic_algebra/linear_equations.md
-      - going_vectorial/degree_3_lots_of_basic_algebra/actually_degree_2_again_first.md
+      - going_vectorial/degree_2/orthonormal_complement.md
+      - going_vectorial/degree_2/explicit_example.md
+    - Degree 3:
+      - going_vectorial/degree_3/some_algebra.md
+      - going_vectorial/degree_3/actually_degree_2_again_first.md
+      - going_vectorial/degree_3/degree_3_-_almost_all_solutions.md
   - quantum_mechanics_basics.md
   - conventions.md
   - further_readings.md

@@ -1,8 +1,14 @@
-# Linear Equations
+# Some Algebra
+
+$N=2$, $D=3$ is the first actually non trivial case. The occupied orbitals and the vacant ones have both rank 2.
+
+We will try to study this with basic algebra.
+
+## Linear equations
 
 Some parametric solutions that are needed later on.
 
-## In one variable
+### In one variable
 
 $$
     kx+d=0 \qquad \Rightarrow \qquad x=-\frac{d}{k}
@@ -10,7 +16,7 @@ $$
 
 Obviously.
 
-## In two variables
+### In two variables
 
 A [linear equation](https://en.wikipedia.org/wiki/Linear_equation#Two_variables)
 

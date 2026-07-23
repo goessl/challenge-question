@@ -1,4 +1,4 @@
-# Degree 2 - Orthonormal Complement
+# Orthonormal Complement
 
 This is also a special case:
 
@@ -48,43 +48,10 @@ $$
 
 where $\left\{\ket{b_j}\right\}_j$ is any complete orthonormal basis of $\mathcal{H}$.
 
-## Hermite function case
+!!! danger "Square root"
 
-The basis:
+    Might be easier to just calculate the hole wavefunction as $\sqrt{\sum_jb_j(x)^2-n(x)}$.
 
-$$
-    \left(\ket{0}, \ket{1}, \ket{2}\right)
-$$
+!!! danger "Restriction of generality"
 
-The full-space kinetic energy:
-
-$$
-    \text{tr}\,\hat{T} = \text{tr}\,\frac{1}{4}\begin{pmatrix}
-                1 &         0 & -\sqrt{2} \\
-                0 &         3 &         0 \\
-        -\sqrt{2} &         0 &         5
-    \end{pmatrix} = \frac{9}{4}
-$$
-
-The orthonormal complement (here the [polynomial part representation](../products/oh_look_a_polynomial.md) becomes useful):
-
-$$
-    \begin{aligned}
-        n^\perp(x) &= h_0(x)^2+h_1(x)^2+h_2(x)^2-n(x) \\
-        &= \left(\frac{e^{-\frac{x^2}{2}}}{\sqrt{\sqrt{\pi}}}\right)^2+\left(\frac{e^{-\frac{x^2}{2}}2x}{\sqrt{2\sqrt{\pi}}}\right)^2+\left(\frac{e^{-\frac{x^2}{2}}(4x^2-2)}{\sqrt{8\sqrt{\pi}}}\right)^2-n(x) \\
-        &= \frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^4+\frac{3}{2}\right)-n(x) \\
-        &= \frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^4+\frac{3}{2}-p_n(x)\right) \\
-        n^\perp{}'(x) &= \frac{e^{-x^2}}{\sqrt{\pi}}\left(-4x^5+8x^3-3x\right)-n'(x) \\
-        &= \frac{e^{-x^2}}{\sqrt{\pi}}\left(-4x^5+8x^3-3x-p_{n'}(x)\right)
-    \end{aligned}
-$$
-
-The kinetic energy:
-
-$$
-    \begin{aligned}
-        \braket{\hat{T}} &= \frac{9}{4}-\frac{1}{8}\int_\mathbb{R}\frac{n^\perp{}'(x)^2}{n^\perp(x)}\,\mathrm{d}x \\
-        &= \frac{9}{4}-\frac{1}{8}\int_\mathbb{R}\frac{\left(\frac{e^{-x^2}}{\sqrt{\pi}}\left(-4x^5+8x^3-3x\right)-n'(x)\right)^2}{\frac{e^{-x^2}}{\sqrt{\pi}}\left(2x^4+\frac{3}{2}\right)-n(x)}\,\mathrm{d}x \\
-        &= \frac{9}{4}-\frac{1}{4\sqrt{\pi}}\int_\mathbb{R}e^{-x^2}\frac{\left(-4x^5+8x^3-3x-p_{n'}(x)\right)^2}{4x^4+3-2p_n(x)}\,\mathrm{d}x
-    \end{aligned}
-$$
+    Used real $T[n]$. How about complex formula?!

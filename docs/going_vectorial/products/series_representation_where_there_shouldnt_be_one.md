@@ -6,7 +6,7 @@ So one could expect that we can work with the wavefunctions as elements of a Hil
 
 But no, dear reader, don't despair, the probability density function (at least ours) has actually a finite vector representation via the polynomials. Now we just make it a little more natural:
 
-We use the Hermite functions as basis for the wavefunctions, and jam the exponential and factors back into the base for the probability density distribution:
+We use the Hermite functions as basis for the wavefunctions, and for $n$ we jam half of the Gaussian and $\sqrt{\pi}$ factors back into the polynomial to also be a Hermite function series.
 
 ## Products of Hermite polynomials
 

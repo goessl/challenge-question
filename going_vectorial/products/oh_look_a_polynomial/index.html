@@ -832,6 +832,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gaussian-polynomial-integral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gaussian-polynomial integral
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -939,15 +950,62 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Degree 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Degree 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../degree_1_-_full_occupation/" class="md-nav__link">
+      <a href="../../degree_1/full_occupation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Degree 1 - Full Occupation
+    Full Occupation
   
 
     
@@ -956,6 +1014,42 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../degree_1/explicit_example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explicit Example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1015,14 +1109,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../degree_2/degree_2_-_orthonormal_complement/" class="md-nav__link">
+      <a href="../../degree_2/orthonormal_complement/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Degree 2 - Orthonormal Complement
+    Orthonormal Complement
   
 
     
@@ -1043,14 +1137,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../degree_2/degree_2_-_explicit_example/" class="md-nav__link">
+      <a href="../../degree_2/explicit_example/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Degree 2 - Explicit Example
+    Explicit Example
   
 
     
@@ -1097,7 +1191,7 @@
   <span class="md-ellipsis">
     
   
-    Degree 3 - Lots of Basic Algebra
+    Degree 3
   
 
     
@@ -1113,7 +1207,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Degree 3 - Lots of Basic Algebra
+    Degree 3
   
 
           </label>
@@ -1126,14 +1220,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../degree_3_lots_of_basic_algebra/linear_equations/" class="md-nav__link">
+      <a href="../../degree_3/some_algebra/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Linear Equations
+    Some Algebra
   
 
     
@@ -1154,7 +1248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../degree_3_lots_of_basic_algebra/actually_degree_2_again_first/" class="md-nav__link">
+      <a href="../../degree_3/actually_degree_2_again_first/" class="md-nav__link">
         
   
   
@@ -1162,6 +1256,34 @@
     
   
     Actually Degree 2 Again First
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../degree_3/degree_3_-_almost_all_solutions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Degree 3 - Almost all Solutions
   
 
     
@@ -1341,6 +1463,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gaussian-polynomial-integral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gaussian-polynomial integral
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1432,6 +1565,28 @@
         &amp;= \frac{1}{2\sqrt{\pi}}\sum_{k=1}^N\int_\mathbb{R}e^{-x^2}\left|p_{\phi_k'}(x)\right|^2\,\mathrm{d}x
     \end{aligned}
 \]</div>
+<h2 id="gaussian-polynomial-integral">Gaussian-polynomial integral</h2>
+<p>From <a href="https://en.wikipedia.org/wiki/Gaussian_integral#Integrals_of_similar_form">Gaussian integral - Wikipedia</a> we know</p>
+<div class="arithmatex">\[
+    \int_\mathbb{R}x^{2n}e^{-\alpha x^2}dx = \sqrt{\frac{\pi}{\alpha}}\frac{(2n-1)!!}{(2\alpha)^n}.
+\]</div>
+<p>Therefore</p>
+<div class="arithmatex">\[
+    \begin{aligned}
+        \int_\mathbb{R}e^{-ax^2}p(x)dx &amp;= \sum_np_n\int_\mathbb{R}e^{-ax^2}x^ndx \\
+        &amp;= \sum_np_{2n}\int_\mathbb{R}e^{-ax^2}x^{2n}dx \\
+        &amp;= \sqrt{\frac{\pi}{a}}\sum_np_{2n}\frac{(2n-1)!!}{(2a)^n} \\
+        &amp;= \sqrt{\frac{\pi}{a}}\sum_np_{2n}\frac{(2n)!}{2^{2n}n!a^n}
+    \end{aligned}
+\]</div>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">gauss_poly_int</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Return $\int_\mathbb{R}e^{-ax^2}p(x)\,\mathrm{d}x$.&quot;&quot;&quot;</span>
+    <span class="c1">#factorial2 falsely returns 0 for -1 instead of 1</span>
+    <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">p2n</span> <span class="o">*</span> <span class="n">Rational</span><span class="p">(</span><span class="n">factorial2</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span> <span class="k">else</span> <span class="n">p2n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">p2n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">p</span><span class="p">[::</span><span class="mi">2</span><span class="p">]))</span>
+</code></pre></div>
 
 
 

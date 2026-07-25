@@ -140,3 +140,26 @@ For some configurations the linear inversion might not be possible $\det=0$. The
     Maybe the solution could be given as a quadratic polynomial in $T$ and $\vec{g}$, where the roots of $T$ are the possible solutions. This could have the same behaviour: when the solution is unique, the discriminant vanishes, and when the solution is two-fold, the discriminant appears and splits the solution space.
 
 [Notebook](rho3.ipynb)
+
+## Addendum 25.07.2026
+
+There is an implicit polynomial solution:
+
+$$
+    \begin{aligned}
+        0 &= \left(\left(\frac{36g_1}{275}-\frac{48\sqrt{30}g_5}{1375}\right)T^2 \\
+        &\qquad +\left(\frac{24\sqrt{2}g_1g_2}{275}+\frac{4\sqrt{6}g_1g_4}{275}-\frac{24\sqrt{5}g_1g_6}{275}-\frac{216g_1}{275}-\frac{38\sqrt{3}g_2g_3}{275}+\frac{108\sqrt{15}g_2g_5}{1375}+\frac{12g_3g_4}{275}+\frac{34\sqrt{30}g_3g_6}{1375}+\frac{56\sqrt{6}g_3}{275}-\frac{24\sqrt{5}g_4g_5}{275}+\frac{4\sqrt{6}g_5g_6}{125}+\frac{64\sqrt{30}g_5}{1375}\right)T \\
+        &\qquad -\frac{2g_1^{3}}{275}+\frac{17\sqrt{6}g_1^2g_3}{1650}-\frac{14\sqrt{30}g_1^2g_5}{4125}-\frac{41g_1g_2^2}{550}+\frac{98\sqrt{3}g_1g_2g_4}{825}-\frac{14\sqrt{10}g_1g_2g_6}{275}-\frac{51\sqrt{2}g_1g_2}{275}-\frac{7g_1g_3^2}{275}+\frac{2\sqrt{5}g_1g_3g_5}{125}-\frac{32g_1g_4^2}{275}+\frac{8\sqrt{30}g_1g_4g_6}{375}-\frac{2\sqrt{6}g_1g_4}{75}-\frac{16g_1g_5^2}{1375}+\frac{16g_1g_6^2}{1375}+\frac{276\sqrt{5}g_1g_6}{1375}+g_1-\frac{\sqrt{6}g_2^2g_3}{66}+\frac{71\sqrt{30}g_2^2g_5}{4125}-\frac{3\sqrt{2}g_2g_3g_4}{275}+\frac{9\sqrt{15}g_2g_3g_6}{275}+\frac{93\sqrt{3}g_2g_3}{275}-\frac{2\sqrt{10}g_2g_4g_5}{55}-\frac{166\sqrt{3}g_2g_5g_6}{4125}-\frac{734\sqrt{15}g_2g_5}{4125}+\frac{\sqrt{6}g_3^{3}}{330}-\frac{4\sqrt{30}g_3^2g_5}{1375}+\frac{4\sqrt{6}g_3g_4^2}{275}-\frac{52\sqrt{5}g_3g_4g_6}{1375}-\frac{2g_3g_4}{11}+\frac{6\sqrt{6}g_3g_5^2}{1375}-\frac{4\sqrt{6}g_3g_6^2}{825}-\frac{257\sqrt{30}g_3g_6}{4125}-\frac{28\sqrt{6}g_3}{75}+\frac{8\sqrt{30}g_4^2g_5}{1375}+\frac{72g_4g_5g_6}{1375}+\frac{276\sqrt{5}g_4g_5}{1375}-\frac{8\sqrt{30}g_5^{3}}{20625}-\frac{16\sqrt{30}g_5g_6^2}{6875}-\frac{34\sqrt{6}g_5g_6}{1375}+\frac{4\sqrt{30}g_5}{125}
+    \end{aligned}
+$$
+
+[Notebook](rho3_implicit_fit.ipynb)
+
+!!! danger "Works everytime"
+
+    Proof that it never collapses -> always has at least one solution <=> "Solution everywhere without special cases".
+
+!!! danger "Complexity"
+
+    Like a characteristic polynomial. Polynomial constructions seems easy (polynomial); root finding must not be more complex that Schrödinger, otherwise useless.
+

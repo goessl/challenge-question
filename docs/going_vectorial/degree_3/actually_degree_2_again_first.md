@@ -56,11 +56,11 @@ So this is easy to revert:
 
 $$
     \begin{aligned}
-        \rho &= \begin{matrix}
+        \rho &= \begin{pmatrix}
             g_0-\frac{\sqrt{2}g_2}{6}-\frac{\sqrt{6}g_4}{18}+2t_2 & \frac{g_1}{2}-\frac{\sqrt{6}g_3}{6} & \frac{g_2}{3}-\frac{2\sqrt{3}g_4}{9}+\sqrt{2}t_2 \\
             \frac{g_1}{2}-\frac{\sqrt{6}g_3}{6} & \frac{\sqrt{2}g_2}{6}-\frac{\sqrt{6}g_4}{9}-2t_2 & \frac{\sqrt{3}g_3}{6} \\
             \frac{g_2}{3}-\frac{2\sqrt{3}g_4}{9}+\sqrt{2}t_2 & \frac{\sqrt{3}g_3}{6} & \frac{\sqrt{6}g_4}{6}
-        \end{matrix} \\
+        \end{pmatrix} \\
         \braket{\hat{T}} &= \frac{g_0}{4}-\frac{\sqrt{2}g_2}{12}+\frac{2\sqrt{6}g_4}{9}-2t_2
     \end{aligned}
 $$

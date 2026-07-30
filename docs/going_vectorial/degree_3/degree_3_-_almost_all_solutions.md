@@ -134,6 +134,7 @@ For some configurations the linear inversion might not be possible $\det=0$. The
 !!! danger "Picks"
 
     We took three out of four equations. Same will happen for another 3/4 pick, but the denominator might be different. If it could be proven that always at least one of the solutions isn't $0/0$, they could be combined to a single solution that is always correct.
+    MAybe combine them by taking the pseudo inverse of the $4 \times 3$ matrix. Acc to Claude it covers all cases any 3-out-of-4-picks can solve into a single equation, but it may still happen to collapse.
 
 !!! danger "Other form"
 
@@ -153,8 +154,6 @@ $$
     \end{aligned}
 $$
 
-[Notebook](rho3_implicit_fit.ipynb)
-
 !!! danger "Works everytime"
 
     Proof that it never collapses -> always has at least one solution <=> "Solution everywhere without special cases".
@@ -167,3 +166,12 @@ $$
 
     Like a characteristic polynomial. Polynomial constructions seems easy (polynomial); root finding must not be more complex that Schrödinger, otherwise useless.
 
+## Addendum 04.08.2026
+
+The implicit polynomial of degree 2 $c_2(\vec{g})T^2+c_1(\vec{g})T+c_0(\vec{g})=0$ collapses for some configurations (in general 0% chance).
+
+But fitting for degree 4 worked. There is a degree 4 polynomial $\sum_{k=0}^4c_k(\vec{g})T^k=0$ which never collapses.
+
+[Notebook](rho3_implicit_fit.ipynb)
+
+Call-outs "Spurious solutions" & "Complexity" are still open.

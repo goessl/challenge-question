@@ -39,6 +39,7 @@ plugins:
             show_symbol_type_heading: true
             members_order: source
             group_by_category: false
+            docstring_style: numpy
             show_signature_annotations: true
 
 extra:
@@ -96,3 +97,4 @@ nav:
   - quantum_mechanics_basics.md
   - conventions.md
   - further_readings.md
+  - package.md

@@ -58,3 +58,7 @@ Minimising over all $\alpha:\mathbb{R}\to[0,2\pi[$ is an infinite dimensional pr
 !!! question "Variation"
 
     Could Euler-Lagrange be used to find the minimising $\alpha$ or minimised $T$?
+
+!!! question "Schrödinger"
+
+    We didn't use Schrödinger yet. Acc. to ChatGPT plugging the wavefunctions into Schrödinger, rearranging for the potential and equating should result in the same equation as Euler-Lagrange.

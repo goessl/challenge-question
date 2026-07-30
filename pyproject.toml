@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cq"
+version = "0.9"
+description = "Challenge-Question support package."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+authors = [
+  {name="Sebastian Gössl", email="goessl@student.tugraz.at"}
+]
+dependencies = [
+  "numpy",
+  "scipy",
+  "sympy"
+]
+
+[project.urls]
+Homepage = "https://github.com/goessl/challenge-question"
+Documentation = "https://goessl.github.io/challenge-question"
+Repository = "https://github.com/goessl/challenge-question.git"
+
+[project.optional-dependencies]
+test = ["pytest"]

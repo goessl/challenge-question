@@ -1316,6 +1316,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#addendum-04082026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addendum 04.08.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1557,6 +1568,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#addendum-04082026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addendum 04.08.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1685,7 +1707,8 @@
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Picks</p>
-<p>We took three out of four equations. Same will happen for another 3/4 pick, but the denominator might be different. If it could be proven that always at least one of the solutions isn't <span class="arithmatex">\(0/0\)</span>, they could be combined to a single solution that is always correct.</p>
+<p>We took three out of four equations. Same will happen for another 3/4 pick, but the denominator might be different. If it could be proven that always at least one of the solutions isn't <span class="arithmatex">\(0/0\)</span>, they could be combined to a single solution that is always correct.
+MAybe combine them by taking the pseudo inverse of the <span class="arithmatex">\(4 \times 3\)</span> matrix. Acc to Claude it covers all cases any 3-out-of-4-picks can solve into a single equation, but it may still happen to collapse.</p>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Other form</p>
@@ -1701,7 +1724,6 @@
         &amp;\qquad -\frac{2g_1^{3}}{275}+\frac{17\sqrt{6}g_1^2g_3}{1650}-\frac{14\sqrt{30}g_1^2g_5}{4125}-\frac{41g_1g_2^2}{550}+\frac{98\sqrt{3}g_1g_2g_4}{825}-\frac{14\sqrt{10}g_1g_2g_6}{275}-\frac{51\sqrt{2}g_1g_2}{275}-\frac{7g_1g_3^2}{275}+\frac{2\sqrt{5}g_1g_3g_5}{125}-\frac{32g_1g_4^2}{275}+\frac{8\sqrt{30}g_1g_4g_6}{375}-\frac{2\sqrt{6}g_1g_4}{75}-\frac{16g_1g_5^2}{1375}+\frac{16g_1g_6^2}{1375}+\frac{276\sqrt{5}g_1g_6}{1375}+g_1-\frac{\sqrt{6}g_2^2g_3}{66}+\frac{71\sqrt{30}g_2^2g_5}{4125}-\frac{3\sqrt{2}g_2g_3g_4}{275}+\frac{9\sqrt{15}g_2g_3g_6}{275}+\frac{93\sqrt{3}g_2g_3}{275}-\frac{2\sqrt{10}g_2g_4g_5}{55}-\frac{166\sqrt{3}g_2g_5g_6}{4125}-\frac{734\sqrt{15}g_2g_5}{4125}+\frac{\sqrt{6}g_3^{3}}{330}-\frac{4\sqrt{30}g_3^2g_5}{1375}+\frac{4\sqrt{6}g_3g_4^2}{275}-\frac{52\sqrt{5}g_3g_4g_6}{1375}-\frac{2g_3g_4}{11}+\frac{6\sqrt{6}g_3g_5^2}{1375}-\frac{4\sqrt{6}g_3g_6^2}{825}-\frac{257\sqrt{30}g_3g_6}{4125}-\frac{28\sqrt{6}g_3}{75}+\frac{8\sqrt{30}g_4^2g_5}{1375}+\frac{72g_4g_5g_6}{1375}+\frac{276\sqrt{5}g_4g_5}{1375}-\frac{8\sqrt{30}g_5^{3}}{20625}-\frac{16\sqrt{30}g_5g_6^2}{6875}-\frac{34\sqrt{6}g_5g_6}{1375}+\frac{4\sqrt{30}g_5}{125}
     \end{aligned}
 \]</div>
-<p><a href="../rho3_implicit_fit.ipynb">Notebook</a></p>
 <div class="admonition danger">
 <p class="admonition-title">Works everytime</p>
 <p>Proof that it never collapses -&gt; always has at least one solution &lt;=&gt; "Solution everywhere without special cases".</p>
@@ -1714,6 +1736,11 @@
 <p class="admonition-title">Complexity</p>
 <p>Like a characteristic polynomial. Polynomial constructions seems easy (polynomial); root finding must not be more complex that Schrödinger, otherwise useless.</p>
 </div>
+<h2 id="addendum-04082026">Addendum 04.08.2026</h2>
+<p>The implicit polynomial of degree 2 <span class="arithmatex">\(c_2(\vec{g})T^2+c_1(\vec{g})T+c_0(\vec{g})=0\)</span> collapses for some configurations (in general 0% chance).</p>
+<p>But fitting for degree 4 worked. There is a degree 4 polynomial <span class="arithmatex">\(\sum_{k=0}^4c_k(\vec{g})T^k=0\)</span> which never collapses.</p>
+<p><a href="../rho3_implicit_fit.ipynb">Notebook</a></p>
+<p>Call-outs "Spurious solutions" &amp; "Complexity" are still open.</p>
 
 
 

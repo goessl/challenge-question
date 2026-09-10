@@ -2,6 +2,32 @@
 
 **[Challenge Question attempt progress.](https://goessl.github.io/challenge-question)**
 
+This repository is the mathematical documentation
+and simultaneously a Python package providing helpers
+for the notebooks used in the derivations.
+
+## Building
+
+### Documentation
+
+```console
+python -m mkdocs build --clean --strict
+```
+
+### Package
+
+When the repository is locally available
+
+```
+python -m pip install .
+```
+
+or directly from GitHub
+
+```
+python -m pip install cq@git+https://github.com/goessl/challenge-question.git
+```
+
 ## Roadmap
 
 - [x] Fumble

@@ -35,6 +35,11 @@ $$
 
     Due to the node theorem there *should* only be finitely many $x$ with $n(x)=0$ (TODO: boundedness and so on in [mathematical foundation](immediate_deductions.md#mathematical-foundation)). Longer intervals shouldn't be a problem because then $n'(x)=0$ also.
 
+!!! danger "Sign change"
+
+    Stated as such $\phi$ could only be non-negative or non-positive, but a valid real wavefunction can have a sign change. Doesn't change the result.
+    But should still be stated that $\phi=\pm\sqrt{n}$ interval vise between nodes.
+
 ## Solution
 
 ### Complex

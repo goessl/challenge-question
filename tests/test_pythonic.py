@@ -1,4 +1,6 @@
 from cq.pythonic import *
+from random import randint
+from fractions import Fraction
 import numpy as np
 
 
@@ -45,10 +47,22 @@ def test_vecabsq():
     assert vecabsq([1, 2, 3]) == 14
 
 
-def test_binom():
+def test_vrandz():
     N = 10000
     for sigma in (10, 20, 40, 80, 160, 320):
-        x = [binom(sigma) for _ in range(N)]
+        x = vrandz(N, sigma)
         assert abs(np.mean(x)) < 5 * sigma/np.sqrt(N) #std(X_bar)=sigma/sqrt(N), test within 5 sigma
         assert abs(np.var(x)-sigma**2) < 5 * sigma**2*np.sqrt(2/N) #std(X_var)=sigma^2*sqrt(2/N), test within 5 sigma
         #not sure about formulas for X_bar & X_var standard deviations
+
+def test_rand_ortho_pair():
+    for _ in range(100):
+        N = randint(2, 10)
+        v, w = rand_ortho_pair(N)
+        
+        assert isinstance(v, tuple) and isinstance(w, tuple)
+        assert len(v) == len(w) == N
+        assert all(isinstance(vi, Fraction) for vi in v+w)
+        
+        assert vecabsq(v) != 0 and vecabsq(w) != 0
+        assert vecdot(v, w) == 0

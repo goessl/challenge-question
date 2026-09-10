@@ -1,6 +1,6 @@
 from cq.symbolic import *
 from random import randint
-from cq.pythonic import vbinom
+from cq.pythonic import vrandz
 import sympy as sp
 from sympy.abc import x as spx, y as spy, t as spt
 import numpy as np
@@ -39,21 +39,21 @@ def test_hermfxpr():
 
 def test_hermfder():
     for _ in range(N):
-        f = vbinom(randint(0, D))
+        f = vrandz(randint(0, D))
         prediction = hermfexpr(hermfder(f))
         actual = hermfexpr(f).diff()
         assert prediction.equals(actual)
 
 def test_hermfkin():
     for _ in range(N):
-        f = vbinom(randint(0, D))
+        f = vrandz(randint(0, D))
         prediction = hermfkin(f)
         actual = sp.integrate(hermfexpr(f).diff()**2, (spx, -sp.oo, +sp.oo)) / 2
         assert prediction.equals(actual)
 
 def test_hermfpmul():
     for _ in range(N):
-        f, g = vbinom(randint(0, D)), vbinom(randint(0, D))
+        f, g = vrandz(randint(0, D)), vrandz(randint(0, D))
         prediction = hermfpmul(f, g)
         actual = hermfexpr(f)*hermfexpr(g) / hermf(0)
         assert hermfexpr(prediction).equals(actual)
@@ -82,7 +82,7 @@ def test_T_matrix():
     for d in range(D):
         T = T_matrix(d)
         for _ in range(N):
-            f = sp.Matrix(vbinom(d+1))
+            f = sp.Matrix(vrandz(d+1))
             assert f.dot(T@f).equals(hermfkin(f))
 
 def test_rho_to_g():

@@ -65,3 +65,7 @@ def hermfpmul(f, g):
                                        (factorial(i)*factorial(j))))
     return tuple(r)
 ```
+
+!!! danger "Even better product"
+
+    Should also be possible as $f\cdot g=e^\frac{-x^2}{2}\sum_ih_i(\sqrt{2}x)$ or something like that. Would maybe be more 'natural'.

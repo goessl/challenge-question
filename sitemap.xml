@@ -2,106 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://goessl.github.io/challenge-question/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/challenge/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/challenge_question/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/conventions/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/further_readings/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/immediate_deductions/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/package/</loc>
-         <lastmod>2026-08-04</lastmod>
-    </url>
-    <url>
-         <loc>https://goessl.github.io/challenge-question/quantum_mechanics_basics/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/single_particle/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/any_wavefunctions/approach/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/any_wavefunctions/counter_example/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/any_wavefunctions/discussion/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/any_wavefunctions/explicit_construction/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
+    </url>
+    <url>
+         <loc>https://goessl.github.io/challenge-question/any_wavefunctions/schroedinger/</loc>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/any_wavefunctions/whole_solution_set/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/going_vectorial/choosing_a_basis/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/going_vectorial/degree_0/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/going_vectorial/roadmap/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/going_vectorial/degree_1/explicit_example/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/going_vectorial/degree_1/full_occupation/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/going_vectorial/degree_2/explicit_example/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/going_vectorial/degree_2/orthonormal_complement/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/going_vectorial/degree_3/actually_degree_2_again_first/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/going_vectorial/degree_3/degree_3_-_almost_all_solutions/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/going_vectorial/degree_3/some_algebra/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/going_vectorial/products/oh_look_a_polynomial/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
     <url>
          <loc>https://goessl.github.io/challenge-question/going_vectorial/products/series_representation_where_there_shouldnt_be_one/</loc>
-         <lastmod>2026-08-04</lastmod>
+         <lastmod>2026-09-10</lastmod>
     </url>
 </urlset>

@@ -18,7 +18,7 @@
         <link rel="prev" href="../actually_degree_2_again_first/">
       
       
-        <link rel="next" href="../../../quantum_mechanics_basics/">
+        <link rel="next" href="../../../conventions/">
       
       
         
@@ -576,6 +576,34 @@
     
   
     Discussion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../any_wavefunctions/schroedinger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schrödinger
   
 
     
@@ -1327,6 +1355,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#addendum-10092026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addendum 10.09.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1347,33 +1386,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../quantum_mechanics_basics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quantum Mechanics Basics
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1579,6 +1591,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#addendum-10092026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addendum 10.09.2026
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1708,11 +1731,16 @@
 <div class="admonition danger">
 <p class="admonition-title">Picks</p>
 <p>We took three out of four equations. Same will happen for another 3/4 pick, but the denominator might be different. If it could be proven that always at least one of the solutions isn't <span class="arithmatex">\(0/0\)</span>, they could be combined to a single solution that is always correct.
-MAybe combine them by taking the pseudo inverse of the <span class="arithmatex">\(4 \times 3\)</span> matrix. Acc to Claude it covers all cases any 3-out-of-4-picks can solve into a single equation, but it may still happen to collapse.</p>
+Maybe combine them by taking the pseudo inverse of the <span class="arithmatex">\(4 \times 3\)</span> matrix. Acc to Claude it covers all cases any 3-out-of-4-picks can solve into a single equation, but it may still happen to collapse.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Resultants</p>
+<p>Linear combination of idempotency equations was used because sympys resultants and everything else in this package is way to slow. Maybe a result can be found by implementing faster multivariate polynomials and just resultanting the characteristic polynomial coefficient equations togethers. Will probably yield the same implicit polynomial as mentioned in the addendum.</p>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Other form</p>
 <p>Maybe the solution could be given as a quadratic polynomial in <span class="arithmatex">\(T\)</span> and <span class="arithmatex">\(\vec{g}\)</span>, where the roots of <span class="arithmatex">\(T\)</span> are the possible solutions. This could have the same behaviour: when the solution is unique, the discriminant vanishes, and when the solution is two-fold, the discriminant appears and splits the solution space.</p>
+<p>THATS IIITTTTT!!!!!!!!!!!!!!!!!</p>
 </div>
 <p><a href="../rho3.ipynb">Notebook</a></p>
 <h2 id="addendum-25072026">Addendum 25.07.2026</h2>
@@ -1739,8 +1767,31 @@ MAybe combine them by taking the pseudo inverse of the <span class="arithmatex">
 <h2 id="addendum-04082026">Addendum 04.08.2026</h2>
 <p>The implicit polynomial of degree 2 <span class="arithmatex">\(c_2(\vec{g})T^2+c_1(\vec{g})T+c_0(\vec{g})=0\)</span> collapses for some configurations (in general 0% chance).</p>
 <p>But fitting for degree 4 worked. There is a degree 4 polynomial <span class="arithmatex">\(\sum_{k=0}^4c_k(\vec{g})T^k=0\)</span> which never collapses.</p>
+<h2 id="addendum-10092026">Addendum 10.09.2026</h2>
+<div class="arithmatex">\[
+    \begin{aligned}
+        0 &amp;= 1.0T^4 \\
+        &amp;\qquad +\left(-27.0g_1+1.1g_2-13.0g_3-2.6g_4+61.0g_5+2.7g_6-6.1\right)T^3 \\
+        &amp;\qquad +\left(-0.14g_1^2-34.0g_1g_2+0.56g_1g_3+12.0g_1g_4-6.4g_1g_5+18.0g_1g_6+1.7\cdot10^2g_1-0.055g_2^2+38.0g_2g_3-0.48g_2g_4-34.0g_2g_5+0.2g_2g_6-4.3g_2-5.0g_3^2+1.1g_3g_4+15.0g_3g_5-14.0g_3g_6-61.0g_3+0.25g_4^2-3.3g_4g_5+0.96g_4g_6+13.0g_4-1.4g_5^2-7.7g_5g_6-1.3\cdot10^2g_5-0.79g_6^2-18.0g_6+13.0\right)T^2 \\
+        &amp;\qquad +\left(-1.9g_1^3+0.72g_1^2g_2+3.3g_1^2g_3-2.0g_1^2g_4+2.3g_1^2g_5+4.0g_1^2g_6-1.7g_1^2+4.6g_1g_2^2-5.4g_1g_2g_3-2.9g_1g_2g_4-1.0g_1g_2g_5+3.7g_1g_2g_6+65.0g_1g_2+0.86g_1g_3^2+7.1g_1g_3g_4-14.0g_1g_3g_5-10.0g_1g_3g_6+9.0g_1g_3-1.7g_1g_4^2-7.6g_1g_4g_5+8.8g_1g_4g_6-51.0g_1g_4+12.0g_1g_5^2+17.0g_1g_5g_6+30.0g_1g_5-8.6g_1g_6^2-28.0g_1g_6-1.8\cdot10^2g_1-0.059g_2^3+5.1g_2^2g_3-0.086g_2^2g_4-6.3g_2^2g_5+0.21g_2^2g_6+0.92g_2^2+2.8g_2g_3^2-4.3g_2g_3g_4+9.1g_2g_3g_5-12.0g_2g_3g_6-70.0g_2g_3+0.17g_2g_4^2+1.5g_2g_4g_5-0.089g_2g_4g_6+1.2g_2g_4-15.0g_2g_5^2+18.0g_2g_5g_6+44.0g_2g_5-0.057g_2g_6^2-1.9g_2g_6+3.2g_2-2.8g_3^3-3.0g_3^2g_4+17.0g_3^2g_5+7.1g_3^2g_6+7.3g_3^2-1.4g_3g_4^2+1.1g_3g_4g_5+2.1g_3g_4g_6+9.0g_3g_4-25.0g_3g_5^2-19.0g_3g_5g_6-61.0g_3g_5-0.1g_3g_6^2+54.0g_3g_6+1.1\cdot10^2g_3+0.011g_4^3+4.6g_4^2g_5-0.35g_4^2g_6-1.1g_4^2+8.9g_4g_5^2-11.0g_4g_5g_6+49.0g_4g_5+0.63g_4g_6^2-2.8g_4g_6-20.0g_4+13.0g_5^3+2.2g_5^2g_6+21.0g_5^2+8.9g_5g_6^2-60.0g_5g_6+46.0g_5-0.63g_6^3+4.5g_6^2+40.0g_6-8.8\right)T \\
+        &amp;\qquad -0.019g_1^4-1.3g_1^3g_2-0.5g_1^3g_3+6.0g_1^3g_4+0.84g_1^3g_5-4.5g_1^3g_6-7.4g_1^3-0.27g_1^2g_2^2+0.35g_1^2g_2g_3+1.1g_1^2g_2g_4+1.6g_1^2g_2g_5-1.7g_1^2g_2g_6-0.46g_1^2g_2+0.92g_1^2g_3^2-12.0g_1^2g_3g_4-1.8g_1^2g_3g_5+9.7g_1^2g_3g_6+21.0g_1^2g_3-1.2g_1^2g_4^2+5.3g_1^2g_4g_5+4.1g_1^2g_4g_6+1.8g_1^2g_4+0.27g_1^2g_5^2-5.4g_1^2g_5g_6-19.0g_1^2g_5-3.4g_1^2g_6^2-5.4g_1^2g_6+5.8g_1^2-0.079g_1g_2^3+0.46g_1g_2^2g_3+1.6g_1g_2^2g_4+3.3g_1g_2^2g_5+0.69g_1g_2^2g_6+6.6g_1g_2^2+2.2g_1g_2g_3^2-2.2g_1g_2g_3g_4-5.6g_1g_2g_3g_5+3.1g_1g_2g_3g_6+11.0g_1g_2g_3-2.1g_1g_2g_4^2-8.4g_1g_2g_4g_5-2.9g_1g_2g_4g_6-48.0g_1g_2g_4+2.3g_1g_2g_5^2+6.3g_1g_2g_5g_6+1.2g_1g_2g_5+2.2g_1g_2g_6^2+43.0g_1g_2g_6+23.0g_1g_2-0.25g_1g_3^3+7.1g_1g_3^2g_4+0.21g_1g_3^2g_5-6.8g_1g_3^2g_6-22.0g_1g_3^2+2.4g_1g_3g_4^2-6.5g_1g_3g_4g_5-7.8g_1g_3g_4g_6-11.0g_1g_3g_4+0.99g_1g_3g_5^2+10.0g_1g_3g_5g_6+49.0g_1g_3g_5+7.2g_1g_3g_6^2+14.0g_1g_3g_6-24.0g_1g_3+1.2g_1g_4^3+4.0g_1g_4^2g_5-0.41g_1g_4^2g_6+34.0g_1g_4^2+2.4g_1g_4g_5^2-1.3g_1g_4g_5g_6+14.0g_1g_4g_5+1.0g_1g_4g_6^2-44.0g_1g_4g_6+40.0g_1g_4-0.67g_1g_5^3-5.7g_1g_5^2g_6-28.0g_1g_5^2-4.9g_1g_5g_6^2-32.0g_1g_5g_6-29.0g_1g_5-1.4g_1g_6^3+8.5g_1g_6^2-45.0g_1g_6-57.0g_1-0.017g_2^4-0.85g_2^3g_3+0.035g_2^3g_4+1.4g_2^3g_5+0.0085g_2^3g_6+0.21g_2^3+0.55g_2^2g_3^2+0.49g_2^2g_3g_4+0.47g_2^2g_3g_5+0.23g_2^2g_3g_6+9.8g_2^2g_3-0.02g_2^2g_4^2-3.0g_2^2g_4g_5-0.0063g_2^2g_4g_6-0.069g_2^2g_4-3.8g_2^2g_5^2-0.3g_2^2g_5g_6-20.0g_2^2g_5+0.0089g_2^2g_6^2-0.54g_2^2g_6-1.6g_2^2-1.6g_2g_3^3+0.0046g_2g_3^2g_4+6.8g_2g_3^2g_5-0.71g_2g_3^2g_6-8.6g_2g_3^2-0.94g_2g_3g_4^2+1.7g_2g_3g_4g_5+4.9g_2g_3g_4g_6+7.8g_2g_3g_4-11.0g_2g_3g_5^2-6.2g_2g_3g_5g_6-17.0g_2g_3g_5-6.2g_2g_3g_6^2-14.0g_2g_3g_6-62.0g_2g_3-0.011g_2g_4^3+4.2g_2g_4^2g_5+0.043g_2g_4^2g_6-0.091g_2g_4^2+4.5g_2g_4g_5^2-5.6g_2g_4g_5g_6+31.0g_2g_4g_5-0.085g_2g_4g_6^2+0.19g_2g_4g_6-0.57g_2g_4+6.3g_2g_5^3+3.8g_2g_5^2g_6+31.0g_2g_5^2+6.7g_2g_5g_6^2-14.0g_2g_5g_6+78.0g_2g_5+0.025g_2g_6^3+0.29g_2g_6^2+3.1g_2g_6+1.6g_2-0.15g_3^4-0.6g_3^3g_4+0.71g_3^3g_5+1.6g_3^3g_6+9.3g_3^3-0.79g_3^2g_4^2-1.3g_3^2g_4g_5+3.1g_3^2g_4g_6+6.9g_3^2g_4-1.4g_3^2g_5^2-5.2g_3^2g_5g_6-38.0g_3^2g_5-3.7g_3^2g_6^2-9.9g_3^2g_6+7.4g_3^2+0.51g_3g_4^3-1.1g_3g_4^2g_5-2.1g_3g_4^2g_6-7.4g_3g_4^2+5.0g_3g_4g_5^2+1.2g_3g_4g_5g_6-1.1g_3g_4g_5+2.9g_3g_4g_6^2+10.0g_3g_4g_6+25.0g_3g_4+1.1g_3g_5^3+6.2g_3g_5^2g_6+53.0g_3g_5^2+5.1g_3g_5g_6^2+35.0g_3g_5g_6+58.0g_3g_5+1.3g_3g_6^3+6.9g_3g_6^2-11.0g_3g_6+65.0g_3+0.019g_4^4-1.9g_4^3g_5-0.099g_4^3g_6-0.12g_4^3-1.3g_4^2g_5^2+3.5g_4^2g_5g_6-17.0g_4^2g_5+0.27g_4^2g_6^2+0.78g_4^2g_6+1.2g_4^2-4.0g_4g_5^3-2.1g_4g_5^2g_6-19.0g_4g_5^2-4.3g_4g_5g_6^2+12.0g_4g_5g_6-1.1\cdot10^2g_4g_5-0.34g_4g_6^3-1.3g_4g_6^2+1.8g_4g_6+10.0g_4-0.22g_5^4-2.4g_5^3g_6-26.0g_5^3-0.74g_5^2g_6^2-7.0g_5^2g_6-32.0g_5^2-1.5g_5g_6^3-11.0g_5g_6^2+96.0g_5g_6-25.0g_5+0.21g_6^4+0.93g_6^3-5.7g_6^2-29.0g_6
+    \end{aligned}
+\]</div>
 <p><a href="../rho3_implicit_fit.ipynb">Notebook</a></p>
 <p>Call-outs "Spurious solutions" &amp; "Complexity" are still open.</p>
+<div class="admonition danger">
+<p class="admonition-title">Non-uniqueness</p>
+<p>There are actually probably 27 independend such polynomials. Therefore it should be possible to remove some monomials in the design/feature matrix. Maybe lower degree in <span class="arithmatex">\(T\)</span> actually possible and just the <span class="arithmatex">\(g\)</span>s needed a higher degree?</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Exact fit</p>
+<p>Floats are satanic, we want an exact symbolic solution.</p>
+<p>Ongoing:</p>
+<ul>
+<li><a href="https://goessl.github.io/radicalfield/">goessl/radicalfield</a></li>
+<li><a href="https://goessl.github.io/linalg/">goessl/linalg</a></li>
+</ul>
+</div>
 
 
 
@@ -1787,13 +1838,13 @@ MAybe combine them by taking the pseudo inverse of the <span class="arithmatex">
         
         
           
-          <a href="../../../quantum_mechanics_basics/" class="md-footer__link md-footer__link--next" aria-label="Next: Quantum Mechanics Basics">
+          <a href="../../../conventions/" class="md-footer__link md-footer__link--next" aria-label="Next: Conventions">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Quantum Mechanics Basics
+                Conventions
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -1365,15 +1365,62 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package `cq`
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Package `cq`
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../package/" class="md-nav__link">
+      <a href="../../cq/cq/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Package
+    cq
   
 
     
@@ -1382,6 +1429,208 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cq/pythonic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.pythonic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cq/numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.numeric
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cq/symbolic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.symbolic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complex Versions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Complex Versions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complex/single_particle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single Particle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complex/whole_solution_set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whole Solution Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1456,7 +1705,7 @@
 
 <h1 id="choosing-a-basis">Choosing a Basis</h1>
 <p>To work with functions and operators in a manageable (parameterisable, computer assisted) manner, we need to represent them as vectors and matrices.</p>
-<p>We naturally choose the solutions of the harmonic oscillator <span class="arithmatex">\((\ket{j})_{j\in\mathbb{N}_0}\)</span>, as they are a complete orthonormal basis and therefore don't restrict generality. To avoid confusion with the density <span class="arithmatex">\(n(x)\)</span>, we label them <span class="arithmatex">\(\ket{j}\)</span> (instead of <span class="arithmatex">\(\ket{n}\)</span>). Their position-space representatives are the <a href="https://en.wikipedia.org/wiki/Hermite_polynomials#Hermite_functions">Hermite functions</a></p>
+<p>We naturally choose the solutions of the harmonic oscillator <span class="arithmatex">\((\ket{j})_{j\in\mathbb{N}_0}\)</span>, as they are a complete orthonormal basis and therefore don't restrict generality. To avoid confusion with the density <span class="arithmatex">\(n(x)\)</span>, we label them <span class="arithmatex">\(\ket{j}\)</span> (instead of the conventional <span class="arithmatex">\(\ket{n}\)</span>). Their position-space representatives are the <a href="https://en.wikipedia.org/wiki/Hermite_polynomials#Hermite_functions">Hermite functions</a></p>
 <div class="arithmatex">\[
     \braket{x|j} = h_j(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{2^jj!\sqrt{\pi}}}H_j(x)
 \]</div>

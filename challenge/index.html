@@ -1352,15 +1352,62 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package `cq`
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Package `cq`
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../package/" class="md-nav__link">
+      <a href="../cq/cq/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Package
+    cq
   
 
     
@@ -1369,6 +1416,208 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cq/pythonic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.pythonic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cq/numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.numeric
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cq/symbolic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.symbolic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complex Versions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Complex Versions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complex/single_particle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single Particle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complex/whole_solution_set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whole Solution Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1454,6 +1703,31 @@
 <li>to the kinetic energy <span class="arithmatex">\(\braket{\hat{T}}\)</span>.</li>
 </ul>
 <p>We will study the functional <span class="arithmatex">\(T[n]\)</span> in the more general way by neither requiring non-degeneracy nor a ground state.</p>
+<div class="admonition danger">
+<p class="admonition-title">Space of wavefunctions</p>
+<ul>
+<li>Are all states in general representable as position space wavefunctions?</li>
+<li>What is the space of possible wavefunctions? Maybe more than <span class="arithmatex">\(L^2(\mathbb{R})\)</span>?</li>
+<li>What about unbounded (unormalisable) states and their amplitude in the infinite?</li>
+</ul>
+<p>So many questions about the mathematical foundation of quantum mechanics ...</p>
+<p>Proposed formulation:</p>
+<p>Let <span class="arithmatex">\(\mathcal{H}\)</span> be a complex Hilbert space, with a continuous (orthonormal and complete) basis <span class="arithmatex">\(\ket{x}\)</span> where <span class="arithmatex">\(x\in\mathbb{R}\)</span>.
+Then we name</p>
+<ul>
+<li>the position operator <span class="arithmatex">\(\hat{X}=\int_\mathbb{R}x\ket{x}\bra{x}\,\mathrm{d}x\)</span>,</li>
+<li>the momentum operator <span class="arithmatex">\(\hat{P}=\int_\mathbb{R}p\ket{p}\bra{p}\,\mathrm{d}p\)</span> with <span class="arithmatex">\(\braket{x|p}=\frac{e^{+\frac{i}{\hbar}xp}}{\sqrt{2\pi\hbar}}\)</span> and</li>
+<li>the kinetic energy <span class="arithmatex">\(\hat{T}=\frac{\hat{P}^2}{2m}\)</span>.</li>
+</ul>
+<p>Then let</p>
+<ul>
+<li>the potential operator <span class="arithmatex">\(\hat{V}\)</span> be local and position dependent,</li>
+<li>the Hamiltonian operator <span class="arithmatex">\(\hat{H}=\hat{T}+\hat{V}\)</span>,</li>
+<li><span class="arithmatex">\(\left\{\ket{\phi_k}\right\}_k\)</span> be eigenstates of the Hamiltonian,</li>
+<li><span class="arithmatex">\(\hat{\rho}=\sum_k\ket{\phi_k}\bra{\phi_k}\)</span> the density operator and</li>
+<li><span class="arithmatex">\(n(x)=\braket{x|\hat{\rho}|x}\)</span> the probability density distribution.</li>
+</ul>
+</div>
 
 
 

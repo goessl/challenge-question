@@ -1454,15 +1454,62 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package `cq`
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Package `cq`
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../package/" class="md-nav__link">
+      <a href="../../cq/cq/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Package
+    cq
   
 
     
@@ -1471,6 +1518,208 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cq/pythonic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.pythonic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cq/numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.numeric
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cq/symbolic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.symbolic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complex Versions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Complex Versions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complex/single_particle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single Particle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complex/whole_solution_set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whole Solution Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1638,7 +1887,7 @@
 <div class="arithmatex">\[
     \left\{\phi_1, \phi_2\right\} \ \mid \ \phi_1, \phi_2 \in L^2(\mathbb{R}), \ \braket{\phi_k|\phi_l}=\delta_{kl}, \ n=|\phi_1|^2+|\phi_2|^2
 \]</div>
-<p><em>Appropriate meaning that there is a solution.</em></p>
+<p><em>Appropriate meaning that the set is not empty / <span class="arithmatex">\(n\)</span> stems from an appropriate ensemble.</em></p>
 <h2 id="solution">Solution</h2>
 <div class="arithmatex">\[
     \begin{aligned}
@@ -1662,7 +1911,7 @@
         \phi_2(x) &amp;= \sqrt{n(x)}\sin\alpha(x)
     \end{aligned} \qquad \alpha: \mathbb{R}\to[0,2\pi[, \ \int_\mathbb{R}n(x)e^{i2\alpha(x)}\,\mathrm{d}x=0
 \]</div>
-<p>Therefore we only have to check the condition for <span class="arithmatex">\(\alpha\)</span>:</p>
+<p>Therefore only the condition for <span class="arithmatex">\(\alpha\)</span> has to be checked:</p>
 <div class="arithmatex">\[
     \begin{aligned}
         &amp;\int_\mathbb{R}n(x)e^{i2\alpha(x)}\,\mathrm{d}x &amp;&amp;\mid \alpha=\frac{\pi}{2}s \\
@@ -1677,6 +1926,15 @@
         &amp;= 0
     \end{aligned}
 \]</div>
+<div class="admonition question">
+<p class="admonition-title">Upper bound</p>
+<p>This always gives an upper bound to the minimal kinetic energy!</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Improving</p>
+<p>Can we iteratively lower this bound until we reach the minimal kinetic energy?
+Like add some higher orders?</p>
+</div>
 <hr />
 <h2 id="explicit-proof-of-all-conditions">Explicit proof of all conditions</h2>
 <h3 id="density">Density</h3>

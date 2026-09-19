@@ -1365,15 +1365,62 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package `cq`
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Package `cq`
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../package/" class="md-nav__link">
+      <a href="../../cq/cq/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Package
+    cq
   
 
     
@@ -1382,6 +1429,208 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cq/pythonic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.pythonic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cq/numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.numeric
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cq/symbolic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.symbolic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complex Versions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Complex Versions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complex/single_particle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single Particle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complex/whole_solution_set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whole Solution Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1458,7 +1707,7 @@
 <p>So we've found that there may be multiple ensembles with different kinetic energies and the same particle density.</p>
 <p>This would mean that there is no functional <span class="arithmatex">\(T[n]\)</span>.</p>
 <p>Luckily time will save us:</p>
-<p>For a (precise adjectives from <a href="../../immediate_deductions/#mathematical-foundation">mathematical foundation</a>) potential the total energy is</p>
+<p>For a (precise adjectives from <a href="../../challenge/">challenge</a>) potential the total energy is</p>
 <div class="arithmatex">\[
     \begin{aligned}
         E &amp;= \sum_{k=1}^NE_k \\
@@ -1471,6 +1720,10 @@
     \end{aligned}
 \]</div>
 <p>We can see that the potential energy is purely determined by the particle density, while the kinetic energy isn't. This means that the <strong>ensemble will automatically collapse to the one with the lowest kinetic energy</strong>.</p>
+<div class="admonition danger">
+<p class="admonition-title">TODO</p>
+<p>Move this to immediate deductions chapter.</p>
+</div>
 <p>This is precisely <a href="https://physics.stackexchange.com/questions/69618/constrained-search-formulation-of-dft-by-levy-or-by-levy-lieb">Levy/Levy-Lieb(?)</a> constrained search:</p>
 <div class="arithmatex">\[
     T[n] = \min_{\{\phi_k\}\to n}\braket{\hat{T}}_\phi
@@ -1478,7 +1731,7 @@
 <p>which is a functional of <span class="arithmatex">\(n\)</span> alone again.</p>
 <p>We've <em>found</em> all valid canditates. We just have to pick the correct one.</p>
 <h2 id="refinement-of-the-previous-results">Refinement of the previous results</h2>
-<p>Applying this to the <a href="../whole_solution_set/#real-case">previous result</a> for the kinetic energy for a particle density of two real wavefunctions gives</p>
+<p>Applying this to the <a href="../whole_solution_set/">previous result</a> for the kinetic energy for a particle density of two real wavefunctions gives</p>
 <div class="arithmatex">\[
     \begin{aligned}
         \braket{\hat{T}} &amp;= \min_\alpha\left(\frac{1}{8}\int_\mathbb{R}\frac{n'(x)^2}{n(x)}+4n(x)\alpha'(x)^2\,\mathrm{d}x\right) \\
@@ -1496,10 +1749,6 @@
 <div class="admonition question">
 <p class="admonition-title">Variation</p>
 <p>Could Euler-Lagrange be used to find the minimising <span class="arithmatex">\(\alpha\)</span> or minimised <span class="arithmatex">\(T\)</span>?</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Schrödinger</p>
-<p>We didn't use Schrödinger yet.</p>
 </div>
 
 

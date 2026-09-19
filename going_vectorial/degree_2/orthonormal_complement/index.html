@@ -1308,15 +1308,62 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package `cq`
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Package `cq`
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../package/" class="md-nav__link">
+      <a href="../../../cq/cq/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Package
+    cq
   
 
     
@@ -1325,6 +1372,208 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cq/pythonic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.pythonic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cq/numeric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.numeric
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cq/symbolic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cq.symbolic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complex Versions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Complex Versions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../complex/single_particle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single Particle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../complex/whole_solution_set/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whole Solution Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1368,7 +1617,7 @@
 
 
 <h1 id="orthonormal-complement">Orthonormal Complement</h1>
-<p>This is also a special case:</p>
+<p>Two particles in degree two (dimensionality three) is also a special case:</p>
 <p>When the space, in which we are quantum mechanically wobbling around, has exactly one degree of freedom more than the number of particles within, the orthonormal complement becomes a sole particle-like hole.</p>
 <p>More precisely:</p>
 <div class="arithmatex">\[
@@ -1393,25 +1642,21 @@
         n^\perp(x) &amp;= \Braket{x|\hat{\rho}^\perp|x} \\
         &amp;= \Braket{x|1-\hat{\rho}|x} \\
         &amp;= \Braket{x|1|x} - \Braket{x|\hat{\rho}|x} \\
-        &amp;= \sum_jb_j(x)^2 - n(x)
+        &amp;= \sum_j|b_j(x)|^2 - n(x)
     \end{aligned}
 \]</div>
 <p>and therefore</p>
 <div class="arithmatex">\[
     \begin{aligned}
         \braket{\hat{T}} &amp;= \text{tr}\,\hat{T}-\frac{1}{8}\int_\mathbb{R}\frac{n^\perp{}'(x)^2}{n^\perp(x)}\,\mathrm{d}x \\
-        &amp;= \text{tr}\,\hat{T}-\frac{1}{8}\int_\mathbb{R}\frac{\left(\frac{\mathrm{d}}{\mathrm{d}x}\left(\sum_jb_j(x)^2-n(x)\right)\right)^2}{\sum_jb_j(x)^2-n(x)}\,\mathrm{d}x \\
-        &amp;= \text{tr}\,\hat{T}-\frac{1}{8}\int_\mathbb{R}\frac{\left(\sum_j2b_j(x)b_j'(x)-n'(x)\right)^2}{\sum_jb_j(x)^2-n(x)}\,\mathrm{d}x
+        &amp;= \text{tr}\,\hat{T}-\frac{1}{8}\int_\mathbb{R}\frac{\left(\frac{\mathrm{d}}{\mathrm{d}x}\left(\sum_j|b_j(x)|^2-n(x)\right)\right)^2}{\sum_j|b_j(x)|^2-n(x)}\,\mathrm{d}x \\
+        &amp;= \text{tr}\,\hat{T}-\frac{1}{8}\int_\mathbb{R}\frac{\left(\sum_j2b_j(x)b_j'(x)-n'(x)\right)^2}{\sum_j|b_j(x)|^2-n(x)}\,\mathrm{d}x
     \end{aligned}
 \]</div>
 <p>where <span class="arithmatex">\(\left\{\ket{b_j}\right\}_j\)</span> is any complete orthonormal basis of <span class="arithmatex">\(\mathcal{H}\)</span>.</p>
 <div class="admonition danger">
 <p class="admonition-title">Square root</p>
-<p>Might be easier to just calculate the hole wavefunction as <span class="arithmatex">\(\sqrt{\sum_jb_j(x)^2-n(x)}\)</span>.</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Restriction of generality</p>
-<p>Used real <span class="arithmatex">\(T[n]\)</span>. How about complex formula?!</p>
+<p>Might be easier to just calculate the hole wavefunction as <span class="arithmatex">\(\sqrt{\sum_j|b_j(x)|^2-n(x)}\)</span>.</p>
 </div>
 
 

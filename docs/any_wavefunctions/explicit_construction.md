@@ -8,7 +8,7 @@ $$
     \left\{\phi_1, \phi_2\right\} \ \mid \ \phi_1, \phi_2 \in L^2(\mathbb{R}), \ \braket{\phi_k|\phi_l}=\delta_{kl}, \ n=|\phi_1|^2+|\phi_2|^2
 $$
 
-*Appropriate meaning that there is a solution.*
+*Appropriate meaning that the set is not empty / $n$ stems from an appropriate ensemble.*
 
 ## Solution
 
@@ -40,7 +40,7 @@ $$
     \end{aligned} \qquad \alpha: \mathbb{R}\to[0,2\pi[, \ \int_\mathbb{R}n(x)e^{i2\alpha(x)}\,\mathrm{d}x=0
 $$
 
-Therefore we only have to check the condition for $\alpha$:
+Therefore only the condition for $\alpha$ has to be checked:
 
 $$
     \begin{aligned}
@@ -56,6 +56,15 @@ $$
         &= 0
     \end{aligned}
 $$
+
+!!! question "Upper bound"
+
+    This always gives an upper bound to the minimal kinetic energy!
+
+!!! question "Improving"
+
+    Can we iteratively lower this bound until we reach the minimal kinetic energy?
+    Like add some higher orders?
 
 ---
 

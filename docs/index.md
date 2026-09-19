@@ -10,7 +10,7 @@ for the notebooks used in the derivations.
 
 ### Documentation
 
-```console
+```bash
 python -m mkdocs build --clean --strict
 ```
 
@@ -18,15 +18,20 @@ python -m mkdocs build --clean --strict
 
 When the repository is locally available
 
-```
+```bash
 python -m pip install .
 ```
 
 or directly from GitHub
 
-```
+```bash
 python -m pip install cq@git+https://github.com/goessl/challenge-question.git
 ```
+
+Some notebooks may also require
+
+- [goessl/radicalfield](https://goessl.github.io/radicalfield/)
+- [goessl/linalg](https://goessl.github.io/linalg/)
 
 ## Roadmap
 

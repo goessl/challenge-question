@@ -11,7 +11,7 @@ Some parametric solutions that are needed later on.
 ### In one variable
 
 $$
-    kx+d=0 \qquad \Rightarrow \qquad x=-\frac{d}{k}
+    ax+b=0 \qquad \Rightarrow \qquad x=-\frac{b}{a}
 $$
 
 Obviously.

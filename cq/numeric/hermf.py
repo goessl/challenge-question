@@ -1,4 +1,7 @@
-"""Numerical helpers."""
+"""Hermite functions.
+
+TODO: Stabilise for higher degrees or throw when becoming inexact.
+"""
 
 
 
@@ -11,14 +14,11 @@ from scipy.special import factorial as spyfactorial
 
 
 __all__ = (
-    'hermfval', 'hermfder', 'hermfkin', 'hermfpmul_coeffs', 'hermfpmul',
-    'states_to_density', 'T_matrix', 'rho_to_g',
-    'rand_ortho_pair'
+    'hermfval', 'hermfder', 'hermfkin', 'hermfpmul_coeffs', 'hermfpmul'
 )
 
 
 
-#Hermite functions
 def hermfval(f: ArrayLike, x: ArrayLike) \
         -> np.float64|NDArray[np.float64]:
     r"""Return the evaluation of Hermite function series `f` at point `x`.
@@ -37,6 +37,7 @@ def hermfval(f: ArrayLike, x: ArrayLike) \
     
     Returns
     -------
+    :
         Value(s) of shape `f.shape[:-1]+x.shape`.
     """
     f, x = np.asarray(f), np.asarray(x)
@@ -46,7 +47,7 @@ def hermfval(f: ArrayLike, x: ArrayLike) \
         raise ValueError('f must have at least 1 coefficient (numpy.hermval is buggy)')
     
     j = np.arange(f.shape[-1], dtype=np.uint64)
-    factors = np.sqrt(2**j * spyfactorial(j, exact=True) * np.sqrt(np.pi))
+    factors = np.sqrt(2**j * spyfactorial(j) * np.sqrt(np.pi))
     return np.exp(-x**2/2) * np.polynomial.hermite.hermval(
             x, np.moveaxis(f/factors, -1, 0))
 
@@ -65,6 +66,7 @@ def hermfder(f: ArrayLike) -> NDArray:
     
     Returns
     -------
+    :
         Derivative(s).
     
     Notes
@@ -84,6 +86,11 @@ def hermfder(f: ArrayLike) -> NDArray:
         \end{aligned}
     $$
     
+    See also
+    --------
+    - [`hermfkin`][cq.numeric.hermf.hermfkin]
+    - [`symbolic.hermfder`][cq.symbolic.hermf.hermfder]
+    
     References
     ----------
     - [Wikipedia - Hermite polynomials - Recursion relation](https://en.wikipedia.org/wiki/Hermite_polynomials#Recursion_relation)
@@ -102,6 +109,10 @@ def hermfder(f: ArrayLike) -> NDArray:
 def hermfkin(f: ArrayLike) -> np.float64|NDArray:
     r"""Return the kinetic energy of a Hermite function series.
     
+    $$
+        T[f] = -\frac{1}{2}\int_\mathbb{R}f''(x)f(x)\,\mathrm{d}x = +\frac{1}{2}\int_\mathbb{R}f'(x)^2\,\mathrm{d}x = \frac{||f'||_{L_\mathbb{R}^2}^2}{2}
+    $$
+    
     Parameters
     ----------
     f
@@ -110,13 +121,13 @@ def hermfkin(f: ArrayLike) -> np.float64|NDArray:
     
     Returns
     -------
+    :
         Kinetic energy/energies.
     
-    Notes
-    -----
-    $$
-        T[f] = -\frac{1}{2}\int_\mathbb{R}f''(x)f(x)\,\mathrm{d}x = +\frac{1}{2}\int_\mathbb{R}f'(x)^2\,\mathrm{d}x = \frac{||f'||_{L_\mathbb{R}^2}^2}{2}
-    $$
+    See also
+    --------
+    - [`hermfder`][cq.numeric.hermf.hermfder]
+    - [`symbolic.hermfkin`][cq.symbolic.hermf.hermfkin]
     """
     fp = hermfder(f)
     return np.sum(np.conjugate(fp)*fp, axis=-1) / 2
@@ -137,6 +148,7 @@ def hermfpmul_coeffs(i: int, j: int) \
     
     Returns
     -------
+    :
         Indices $i+j-2k$ & coefficients $c_k$, descending in index.
     
     Notes
@@ -146,7 +158,7 @@ def hermfpmul_coeffs(i: int, j: int) \
     
     See also
     --------
-    - [`hermfpmul`][cq.numeric.hermfpmul]
+    - [`hermfpmul`][cq.numeric.hermf.hermfpmul]
     
     References
     ----------
@@ -155,9 +167,8 @@ def hermfpmul_coeffs(i: int, j: int) \
     k = np.arange(min(i, j)+1, dtype=np.uint64)
     indices = i + j - 2*k
     coefficients = np.sqrt(
-            factorial(i) * factorial(j) * spyfactorial(i+j-2*k, exact=True)) \
-            / (spyfactorial(k, exact=True) * spyfactorial(i-k, exact=True) \
-                * spyfactorial(j-k, exact=True))
+            factorial(i) * factorial(j) * spyfactorial(i+j-2*k)) \
+            / (spyfactorial(k) * spyfactorial(i-k) * spyfactorial(j-k))
     indices.flags.writeable = coefficients.flags.writeable = False
     return indices, coefficients
 
@@ -176,6 +187,7 @@ def hermfpmul(f: ArrayLike, g: ArrayLike) -> NDArray:
     
     Returns
     -------
+    :
         Pseudo product.
     
     Notes
@@ -208,7 +220,8 @@ def hermfpmul(f: ArrayLike, g: ArrayLike) -> NDArray:
     
     See also
     --------
-    - [`hermfpmul_coeffs`][cq.numeric.hermfpmul_coeffs]
+    - [`hermfpmul_coeffs`][cq.numeric.hermf.hermfpmul_coeffs]
+    - [`symbolic.hermfpmul`][cq.symbolic.hermf.hermfpmul]
     """
     f, g = np.asarray(f), np.asarray(g)
     if not {f.ndim, g.ndim} <= {1, 2}:
@@ -223,171 +236,3 @@ def hermfpmul(f: ArrayLike, g: ArrayLike) -> NDArray:
             r[..., indices] += f[..., i, np.newaxis] * g[..., j, np.newaxis] \
                     * coefficients
     return r
-
-
-
-#quantum mechanics
-def states_to_density(*states: ArrayLike) -> NDArray:
-    r"""Return the density matrix for an ensemble of state vectors.
-    
-    $$
-        \sum_i\vec{v}_i\vec{v}_i^\dagger
-    $$
-    
-    Parameters
-    ----------
-    *states
-        States as vectors of same length.
-    
-    Returns
-    -------
-        Density matrix.
-    """
-    if not states:
-        raise ValueError('requiring at least one state')
-    states = tuple(map(np.asarray, states))
-    if not all(s.ndim in {1, 2} for s in states):
-        raise ValueError('states must be one or two dimensional')
-    if len(set(s.shape[-1] for s in states)) != 1:
-        raise ValueError('all states must be of same length')
-    
-    return sum(s[..., :, np.newaxis] * np.conjugate(s[..., np.newaxis, :])
-            for s in states)
-
-def T_matrix(D: int) -> NDArray[np.float64]:
-    r"""Return the matrix representation of $\hat{T}$.
-    
-    In Hermite function series as basis.
-    
-    Parameters
-    ----------
-    D
-        Degree.
-    
-    Returns
-    -------
-        $T$ matrix.
-    """
-    T = np.zeros((D+1, D+1), dtype=np.float64)
-    
-    i = np.arange(D+1)
-    np.fill_diagonal(T, (2*i+1)/4)
-    i = i[:max(D-1, 0)]
-    off_diagonal = -np.sqrt((i+1)*(i+2)) / 4
-    np.fill_diagonal(T[:, 2:], off_diagonal)
-    np.fill_diagonal(T[2:, :], off_diagonal)
-    
-    return T
-
-def rho_to_g(rho: ArrayLike) -> NDArray:
-    r"""Return $\vec{g}$ for density matrix $\rho$.
-    
-    Parameters
-    ----------
-    rho
-        Density matrix as a 2D array
-        or multiple density matrices stacked in a 3D array.
-    
-    Returns
-    -------
-        Coefficient vector(s).
-    """
-    rho = np.asarray(rho)
-    if rho.ndim not in {2, 3}:
-        raise ValueError('rho must be two or three dimensional')
-    
-    g = np.zeros(rho.shape[:-2]+(rho.shape[-2]+rho.shape[-1]-1,),
-            dtype=np.result_type(rho.dtype, np.float64))
-    for i in range(rho.shape[-2]):
-        for j in range(rho.shape[-1]):
-            indices, coefficients = hermfpmul_coeffs(i, j)
-            g[..., indices] += rho[..., i, j, np.newaxis] * coefficients
-    return g
-
-
-
-#random
-def rand_ortho_pair(N: int, M: int|None=None) \
-        -> tuple[NDArray[np.float64], NDArray[np.float64]]:
-    r"""Return two orthonormal vectors.
-    
-    $$
-        \vec{v}, \ \vec{w} \qquad ||\vec{v}||=||\vec{w}||=1, \ \Braket{\vec{v}|\vec{w}}=0
-    $$
-    
-    Parameters
-    ----------
-    N
-        Length.
-    M
-        Number of pairs, or `None` for a pair of 1D-vectors.
-    
-    Returns
-    -------
-        Vectors.
-    
-    Notes
-    -----
-    Symmetric orthogonalisation instead of Gram-Schmidt
-    just to be perfectly sure no bias gets introduced.
-    
-    Begin with two unit vectors and bend them away of each other equally:
-    
-    $$
-        \begin{aligned}
-            &\Braket{\vec{v}+\alpha(\vec{w}-\vec{v}) | \vec{w}-\alpha(\vec{w}-\vec{v})} \\
-            &= \Braket{\vec{v}|\vec{w}}+\alpha\Braket{\vec{w}-\vec{v}|\vec{w}}-\alpha\Braket{\vec{v}|\vec{w}-\vec{v}}-\alpha^2\Braket{\vec{w}-\vec{v}|\vec{w}-\vec{v}} \\
-            &= \Braket{\vec{v}|\vec{w}}+\alpha(1-\Braket{\vec{v}|\vec{w}})-\alpha(\Braket{\vec{v}|\vec{w}}-1)-\alpha^2(1+1-\Braket{\vec{v}|\vec{w}}-\Braket{\vec{w}|\vec{v}}) \\
-            &= \Braket{\vec{v}|\vec{w}} + 2\alpha(1-\Braket{\vec{v}|\vec{w}})+2\alpha^2(\Braket{\vec{v}|\vec{w}}-1) \\
-            &\overset{!}{=} 0 \\
-            \alpha &= \frac{\Braket{\vec{v}|\vec{w}}-1\pm\sqrt{1-\Braket{\vec{v}|\vec{w}}^2}}{2(\Braket{\vec{v}|\vec{w}}-1)} \\
-            \vec{v}' &= \vec{v}+\alpha(\vec{w}-\vec{v}) \\
-            \vec{w}' &= \vec{w}-\alpha(\vec{w}-\vec{v})
-        \end{aligned}
-    $$
-    
-    Then normalise again.
-    
-    Degenerate cases:
-    
-    - $\Braket{\vec{v}|\vec{w}}=1$ ($\vec{v}, \vec{w}$ parallel)
-        obviously because of the denominator
-    - $\Braket{\vec{v}|\vec{w}}=-1$ ($\vec{v}, \vec{w}$ antiparallel)
-        because then $\vec{v}'=\vec{w}'=\frac{1}{2}(\vec{w}+\vec{v})=\vec{0}$
-    """
-    if not N >= 2:
-        raise ValueError('N must be ≥ 2')
-    if not (M is None or M>=1):
-        raise ValueError('M must be ≥ 1')
-    
-    v_arr = np.empty(((M if M is not None else 1), N), dtype=np.float64)
-    w_arr = np.empty(((M if M is not None else 1), N), dtype=np.float64)
-    i = 0
-    while True:
-        #random unit vectors
-        v_arr[i,:], w_arr[i,:] = np.random.randn(N), np.random.randn(N)
-        nv, nw = np.linalg.norm(v_arr[i,:]), np.linalg.norm(w_arr[i,:])
-        if np.isclose(nv, 0) or np.isclose(nw, 0):
-            continue
-        v_arr[i,:] /= nv
-        w_arr[i,:] /= nw
-        
-        #orthogonalise
-        vw = v_arr[i,:] @ w_arr[i,:]
-        if np.isclose(vw, +1) or np.isclose(vw, -1):
-            continue
-        a = (vw-1+np.sqrt(1-vw*vw)) / (2*(vw-1))
-        d = a * (w_arr[i,:] - v_arr[i,:])
-        v_arr[i,:] += d
-        w_arr[i,:] -= d
-        
-        #normalise
-        v_arr[i,:] /= np.linalg.norm(v_arr[i,:])
-        w_arr[i,:] /= np.linalg.norm(w_arr[i,:])
-        
-        if M is None:
-            return v_arr[0,:], w_arr[0,:]
-        else:
-            i += 1
-            if i == M:
-                return v_arr, w_arr

@@ -23,7 +23,7 @@ the probability density distribution has the form
 $$
     \begin{aligned}
         n(x) &= \sum_{ij}\rho_{ij}h_i(x)h_j(x) \\
-        &= \frac{e^{-\frac{x^2}{2}}}{\sqrt[4]{\pi}}\sum_jg_jh_j(x) \\
+        &= h_0(x)\sum_jg_jh_j(x) \\
         \vec{g} &= \begin{pmatrix}
             \rho_{00} + \rho_{11} + \rho_{22} \\
             2\rho_{01} + 2\sqrt{2}\rho_{12} \\
@@ -40,7 +40,7 @@ $\vec{g}$ can always be fitted for some test density (that stems from two orthon
 
 !!! danger "Uniqueness"
 
-    Is $\vec{g}$ unique?! Not that we redo what we have proved in the [Any Wavefunctions chapter](../../any_wavefunctions/discussion.md).
+    Is $\vec{g}$ unique?! Should be unique. Not that we redo what we have proved in the [Any Wavefunctions chapter](../../any_wavefunctions/discussion.md).
 
 ## Vector to matrix
 
@@ -124,11 +124,11 @@ $$
     \end{aligned}
 $$
 
-We **must not** just chose any of the linear equations and solve for $t_2$, as the linear coefficient might be zero!
+We **must not** just chose any of the linear equations and solve for $t_2$, as the $t_2$ factor might be zero (first coefficient in all linear equations dependent on $\vec{g}$) collapsing the linear equation to degeneracy!
 
 ### Linear combination
 
-To get a linear equation in $t_2$ with a non-zero linear coefficient such that it can be solve every time without any singularities/edge cases we linearly combine the equations in a clever way (lots of recursive linear equation solving in the notebook; $\begin{pmatrix} 0 & 0 & \sqrt{2} & -\frac{1}{2} & 0 & -1 \end{pmatrix}$):
+To get a linear equation in $t_2$ with a non-zero linear coefficient such that it can be solved every time without any singularities/edge cases we linearly combine the equations in a clever way (lots of recursive linear equation solving in the notebook; $\begin{pmatrix} 0 & 0 & \sqrt{2} & -\frac{1}{2} & 0 & -1 \end{pmatrix}$):
 
 $$
     0 = t_2-\frac{g_1^2}{8}+\frac{\sqrt{6}g_1g_3}{6}-\frac{g_2^2}{4}+\frac{\sqrt{3}g_2g_4}{3}+\frac{5\sqrt{2}g_2}{12}-\frac{3g_3^2}{8}-\frac{g_4^2}{2}-\frac{\sqrt{6}g_4}{9}
@@ -147,26 +147,64 @@ $$
     \end{aligned}
 $$
 
-!!! question "Numerical stability"
+There were no steps that would reduce generality, so the solution should be unique (no multiple $\rho$ or $T$ for some $\vec{g}$).
 
-    We know there are actually just 2 degrees of freedom, so is it possible to rewrite $\braket{\hat{T}}$ just in $g_1$ & $g_2$? Higher coefficients are numerically more unstable.
+We weren't just able to find $\braket{\hat{T}}$, but also $\rho$!
 
-!!! danger "Generality"
+!!! warning "Form of terms"
 
-    Up to $\rho$ chosen to be symmetric instead of hermitian (complex case again) there was never a restriction to generality. So we weren't just able to find $\braket{\hat{T}}$, but also $\rho$!
+    WHY ARE ALL TERMS QUADRATIC EXCEPT $g_2$?! Because we've already substituted in $g_0=2$.
 
-!!! danger "Form of terms"
+!!! danger "Numerical fitting 1"
 
-    WHY ARE ALL TERMS QUADRATIC EXCEPT $g_2$?! Smells like a math mistake.
+    Show that numerical fitting also yields only one equation. Stengthens uniqueness finding.
 
-!!! danger "Boundaries"
+!!! danger "Numerical fitting 2"
 
-    This was for $\left(\ket{0}, \ket{1}, \ket{2}\right)$. Do the same for
+    Show that using the quadratic from the char poly coef equations would yield two $T$ candidates, and the cubic would then always verify only a single one.
+
+[Notebook](rho2.ipynb)
+
+## Uniqueness & boundaries
+
+By doing a numeric implicit polynomial fit it can further be stated:
+
+- $p(\vec{g}, T)=0$ quadratic in $\vec{g}$, monic and linear in $T$ is unique.
+- This was for basis $\left(\ket{0}, \ket{1}, \ket{2}\right)$.
+    For
     
     - $\left(\ket{0}, \ket{1}, \ket{3}\right)$
     - $\left(\ket{0}, \ket{2}, \ket{3}\right)$
     - $\left(\ket{1}, \ket{2}, \ket{3}\right)$
     
-    These solution must then be the boundaries of a solution for the degree 3 case.
+    the polynomial $p(\vec{g}, T)=0$ linear in $\vec{g}$ & $T$ converges.
+    Always yielding two such polynomials:
+    
+    - one switch ($p(\vec{g})=0$ for an arbitrary degree 3 ensemble
+        when on the corresponding degree 2 boundary)
+    - one monic $p(\vec{g}, T)=0$ which can always be used to calculate $T$.
 
-[Notebook](rho2.ipynb)
+| Basis                                    | Switch                                               | $T$                                                                                                                                             |
+| ---------------------------------------- | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| $\left(\ket{0}, \ket{1}, \ket{2}\right)$ | $g_5$, $g_6$                                         | $T=-\frac{g_1^2}{4}+\frac{\sqrt{6}g_1g_3}{3}-\frac{g_2^2}{2}+\frac{2\sqrt{3}g_2g_4}{3}+\frac{3\sqrt{2}g_2}{4}-\frac{3g_3^2}{4}-g_4^2+\frac{1}{2}$ |
+| $\left(\ket{0}, \ket{1}, \ket{3}\right)$ | $g_5$                                                | $T=\frac{\sqrt{2}g_2}{4}-\frac{\sqrt{6}g_4}{4}+\frac{9\sqrt{5}g_6}{20}+\frac{1}{2}$                                                               |
+| $\left(\ket{0}, \ket{2}, \ket{3}\right)$ | $- \frac{\sqrt{30}}{3}g_1+g_5$                       | $T=-\frac{\sqrt{2}g_2}{4}+\frac{\sqrt{6}g_4}{3}-\frac{3\sqrt{5}g_6}{10}+\frac{1}{2}$                                                              |
+| $\left(\ket{1}, \ket{2}, \ket{3}\right)$ | $\frac{\sqrt{30}}{3}g_1- \frac{2\sqrt{5}}{3}g_3+g_5$ | $T=-\frac{5\sqrt{2}g_2}{4}+\frac{\sqrt{6}g_4}{2}-\frac{3\sqrt{5}g_6}{10}+\frac{13}{2}$                                                            |
+
+## Unorthonormalised
+
+Interestingly $p(\vec{g}, T)=0$ can also be fitted uniquely and monic in $T$ for degree 3 EVEN WHEN THE TWO WAVEFUNCTIONS AREN'T ORTHONORMAL!!!
+
+$$
+    0=T^3+\left(-\frac{3g_0}{4}-\frac{\sqrt{2}g_2}{4}\right)T^2+\left(\frac{3g_0^2}{16}+\frac{\sqrt{2}g_0g_2}{8}-\frac{\sqrt{6}g_0g_4}{3}+\frac{\sqrt{6}g_1g_3}{6}-\frac{g_2^2}{8}+\frac{2\sqrt{3}g_2g_4}{3}-\frac{g_3^2}{2}-g_4^2\right)T-\frac{g_0^3}{64}-\frac{\sqrt{2}g_0^2g_2}{64}+\frac{\sqrt{6}g_0^2g_4}{12}-\frac{\sqrt{6}g_0g_1g_3}{24}+\frac{g_0g_2^2}{32}-\frac{\sqrt{3}g_0g_2g_4}{3}+\frac{7g_0g_3^2}{24}+\frac{11g_0g_4^2}{12}+\frac{\sqrt{6}g_1^2g_4}{12}-\frac{\sqrt{3}g_1g_2g_3}{12}-\frac{g_1g_3g_4}{3}+\frac{\sqrt{2}g_2^3}{32}+\frac{\sqrt{2}g_2g_3^2}{24}-\frac{\sqrt{2}g_2g_4^2}{4}+\frac{\sqrt{6}g_3^2g_4}{12}+\frac{\sqrt{6}g_4^3}{9}
+$$
+
+!!! danger "Splitting"
+
+    Current guess:
+    
+    - At degree 2 there is no splitting. There is only one $\rho$ for every $\vec{g}$ and therefore also just one $T$.
+    - Even if $\vec{g}(\rho)$ has a one dimensional kernel, it only ever intersects the symmetric matrices with eigenvalues 0, 1, 1 just once.
+    - For the unorthonormalised case there is probably splitting. The implicit polynomial looks like $\det\rho$. Maximum branches 3 so that the polynomial yield all and only physical $T$s?
+
+[Notebook](rho2_implicit_fit.ipynb)

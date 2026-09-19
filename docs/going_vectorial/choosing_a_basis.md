@@ -2,7 +2,7 @@
 
 To work with functions and operators in a manageable (parameterisable, computer assisted) manner, we need to represent them as vectors and matrices.
 
-We naturally choose the solutions of the harmonic oscillator $(\ket{j})_{j\in\mathbb{N}_0}$, as they are a complete orthonormal basis and therefore don't restrict generality. To avoid confusion with the density $n(x)$, we label them $\ket{j}$ (instead of $\ket{n}$). Their position-space representatives are the [Hermite functions](https://en.wikipedia.org/wiki/Hermite_polynomials#Hermite_functions)
+We naturally choose the solutions of the harmonic oscillator $(\ket{j})_{j\in\mathbb{N}_0}$, as they are a complete orthonormal basis and therefore don't restrict generality. To avoid confusion with the density $n(x)$, we label them $\ket{j}$ (instead of the conventional $\ket{n}$). Their position-space representatives are the [Hermite functions](https://en.wikipedia.org/wiki/Hermite_polynomials#Hermite_functions)
 
 $$
     \braket{x|j} = h_j(x) = \frac{e^{-\frac{x^2}{2}}}{\sqrt{2^jj!\sqrt{\pi}}}H_j(x)

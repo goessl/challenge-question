@@ -6,12 +6,18 @@ import numpy as np
 
 
 def test_veczero():
-    assert veczero == ()
+    assert isinstance(veczero, tuple) and veczero==()
 
 def test_vecbasis():
     assert vecbasis(0) == (1,)
     assert vecbasis(1) == (0, 1)
     assert vecbasis(2) == (0, 0, 1)
+    
+    for n in range(20):
+        v = vecbasis(n)
+        assert isinstance(v, tuple) and len(v) == n+1
+        assert all(isinstance(vi, int) for vi in v)
+        assert all(vi==0 for vi in v[:-1]) and v[-1]==1
 
 def test_vecpos():
     assert vecpos([+1, -2]) == (+1, -2)
@@ -62,7 +68,8 @@ def test_rand_ortho_pair():
         
         assert isinstance(v, tuple) and isinstance(w, tuple)
         assert len(v) == len(w) == N
-        assert all(isinstance(vi, Fraction) for vi in v+w)
+        assert all(isinstance(vi, Fraction) for vi in v)
+        assert all(isinstance(wi, Fraction) for wi in w)
         
         assert vecabsq(v) != 0 and vecabsq(w) != 0
         assert vecdot(v, w) == 0

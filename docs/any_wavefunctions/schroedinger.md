@@ -56,4 +56,9 @@ $$
 
 !!! question "What now?"
 
-    This should be an addition requirement to $\int_\mathbb{R}n(x)e^{i2\alpha(x)}\,\mathrm{d}x$. Or is it actually the same in disguise? To be investigated further.
+    This should be an additional requirement to $\int_\mathbb{R}n(x)e^{i2\alpha(x)}\,\mathrm{d}x$. Or is it actually the same in disguise? To be investigated further.
+    Could this be substituted into the necessary condition integral or the kinetic energy integral?
+
+!!! question "Variation"
+
+    Strong suspicion that Euler-Lagrange in the necessary condition integral gives the same result as Schrödinger.

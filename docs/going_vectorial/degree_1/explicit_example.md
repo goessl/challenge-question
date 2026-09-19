@@ -23,6 +23,15 @@ $$
     \end{aligned}
 $$
 
+The density:
+
+$$
+    \rho = \begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{pmatrix}
+$$
+
 The kinetic energy:
 
 $$
@@ -37,3 +46,7 @@ $$
 $$
 
 So $\hat{\rho}$ and $T$ are constant one.
+
+!!! danger "TODO"
+
+    Boundaries. Switches.

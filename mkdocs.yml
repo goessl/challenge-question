@@ -35,7 +35,7 @@ plugins:
       handlers:
         python:
           options:
-            show_root_toc_entry: false
+            show_root_heading: true
             show_symbol_type_heading: true
             members_order: source
             group_by_category: false
@@ -77,7 +77,7 @@ nav:
     - any_wavefunctions/explicit_construction.md
     - any_wavefunctions/counter_example.md
     - any_wavefunctions/discussion.md
-    - any_wavefunctions\schroedinger.md
+    - any_wavefunctions/schroedinger.md
   - Going Vectorial:
     - going_vectorial/choosing_a_basis.md
     - Products:
@@ -97,4 +97,11 @@ nav:
       - going_vectorial/degree_3/degree_3_-_almost_all_solutions.md
   - conventions.md
   - further_readings.md
-  - package.md
+  - Package `cq`:
+    - cq: cq/cq.md
+    - cq.pythonic: cq/pythonic.md
+    - cq.numeric: cq/numeric.md
+    - cq.symbolic: cq/symbolic.md
+  - Complex Versions:
+    - complex/single_particle.md
+    - complex/whole_solution_set.md

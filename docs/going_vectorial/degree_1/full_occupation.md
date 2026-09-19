@@ -1,6 +1,6 @@
 # Full Occupation
 
-This is a special case: we have full occupation.
+Two particles in degree one (dimensionality two) is a special case: we have full occupation.
 
 When the space, in which we are quantum mechanically wobbling around, has exactly the same dimensionality as the number of particles within, we have full occupation and only one possible constant value for the kinetic energy.
 
@@ -22,3 +22,7 @@ $$
         \braket{\hat{T}} &= \text{tr}\,\hat{\rho}\hat{T} = \text{tr}\,\hat{T}
     \end{aligned}
 $$
+
+!!! danger "TODO"
+
+    Idk seems trivial but maybe needs a full functional analysis semester to prove.

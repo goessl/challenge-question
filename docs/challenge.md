@@ -32,3 +32,28 @@ $$
 - to the kinetic energy $\braket{\hat{T}}$.
 
 We will study the functional $T[n]$ in the more general way by neither requiring non-degeneracy nor a ground state.
+
+!!! danger "Space of wavefunctions"
+
+    - Are all states in general representable as position space wavefunctions?
+    - What is the space of possible wavefunctions? Maybe more than $L^2(\mathbb{R})$?
+    - What about unbounded (unormalisable) states and their amplitude in the infinite?
+    
+    So many questions about the mathematical foundation of quantum mechanics ...
+    
+    Proposed formulation:
+    
+    Let $\mathcal{H}$ be a complex Hilbert space, with a continuous (orthonormal and complete) basis $\ket{x}$ where $x\in\mathbb{R}$.
+    Then we name
+    
+    - the position operator $\hat{X}=\int_\mathbb{R}x\ket{x}\bra{x}\,\mathrm{d}x$,
+    - the momentum operator $\hat{P}=\int_\mathbb{R}p\ket{p}\bra{p}\,\mathrm{d}p$ with $\braket{x|p}=\frac{e^{+\frac{i}{\hbar}xp}}{\sqrt{2\pi\hbar}}$ and
+    - the kinetic energy $\hat{T}=\frac{\hat{P}^2}{2m}$.
+    
+    Then let
+    
+    - the potential operator $\hat{V}$ be local and position dependent,
+    - the Hamiltonian operator $\hat{H}=\hat{T}+\hat{V}$,
+    - $\left\{\ket{\phi_k}\right\}_k$ be eigenstates of the Hamiltonian,
+    - $\hat{\rho}=\sum_k\ket{\phi_k}\bra{\phi_k}$ the density operator and
+    - $n(x)=\braket{x|\hat{\rho}|x}$ the probability density distribution.

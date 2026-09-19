@@ -6,7 +6,7 @@ This would mean that there is no functional $T[n]$.
 
 Luckily time will save us:
 
-For a (precise adjectives from [mathematical foundation](../immediate_deductions.md#mathematical-foundation)) potential the total energy is
+For a (precise adjectives from [challenge](../challenge.md)) potential the total energy is
 
 $$
     \begin{aligned}
@@ -22,6 +22,10 @@ $$
 
 We can see that the potential energy is purely determined by the particle density, while the kinetic energy isn't. This means that the **ensemble will automatically collapse to the one with the lowest kinetic energy**.
 
+!!! danger "TODO"
+
+    Move this to immediate deductions chapter.
+
 This is precisely [Levy/Levy-Lieb(?)](https://physics.stackexchange.com/questions/69618/constrained-search-formulation-of-dft-by-levy-or-by-levy-lieb) constrained search:
 
 $$
@@ -34,7 +38,7 @@ We've *found* all valid canditates. We just have to pick the correct one.
 
 ## Refinement of the previous results
 
-Applying this to the [previous result](whole_solution_set.md#real-case) for the kinetic energy for a particle density of two real wavefunctions gives
+Applying this to the [previous result](whole_solution_set.md) for the kinetic energy for a particle density of two real wavefunctions gives
 
 $$
     \begin{aligned}
@@ -58,7 +62,3 @@ Minimising over all $\alpha:\mathbb{R}\to[0,2\pi[$ is an infinite dimensional pr
 !!! question "Variation"
 
     Could Euler-Lagrange be used to find the minimising $\alpha$ or minimised $T$?
-
-!!! question "Schrödinger"
-
-    We didn't use Schrödinger yet.

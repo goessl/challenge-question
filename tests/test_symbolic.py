@@ -85,6 +85,13 @@ def test_T_matrix():
             f = sp.Matrix(vrandz(d+1))
             assert f.dot(T@f).equals(hermfkin(f))
 
+def test_rho_to_T():
+    for d in range(D):
+        T = T_matrix(d)
+        for _ in range(N):
+            rho = sp.Matrix(d+1, d+1, vrandz((d+1)**2))
+            assert rho_to_T(rho).equals((T@rho).trace())
+
 def test_rho_to_g():
     rho = sp.Matrix([[ 0,  1,  2,  3],
                      [ 4,  5,  6,  7],

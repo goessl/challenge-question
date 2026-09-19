@@ -88,7 +88,7 @@ $$
 
 ## Gaussian-polynomial integral
 
-From [Gaussian integral - Wikipedia](https://en.wikipedia.org/wiki/Gaussian_integral#Integrals_of_similar_form) we know
+From [Wikipedia - Gaussian integral](https://en.wikipedia.org/wiki/Gaussian_integral#Integrals_of_similar_form) we know
 
 $$
     \int_\mathbb{R}x^{2n}e^{-\alpha x^2}dx = \sqrt{\frac{\pi}{\alpha}}\frac{(2n-1)!!}{(2\alpha)^n}.

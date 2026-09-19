@@ -1,50 +1,5 @@
 # Immediate Deductions
 
-## Natural units
-
-Natural units $\hbar=m=1$ used everywhere like in the [original Challenge-Question document](challenge_question.md).
-
-!!! danger "Natural units"
-
-    TODO everything with SI-units.
-
-## Mathematical foundation
-
-We assume all states correspond to position space wavefunctions and they are in $L^2(\mathbb{R})$. Implying $\braket{f|g}=\int_\mathbb{R}f^*(x)g(x)\,\mathrm{d}x$.
-
-!!! danger "Space of wavefunctions"
-
-    - Are in general all states representable as position space wavefunctions?
-    - What is the space of possible wavefunctions? Maybe more than $L^2(\mathbb{R})$?
-    - What about unbounded (unormalisable) states and their amplitude in the infinite?
-    
-    So many questions about the mathematical foundation of quantum mechanics ...
-    
-    Proposed formulation:
-    
-    Let $\mathcal{H}$ be a complex Hilbert space, with a continuous (orthonormal and complete) basis $\ket{x}$ where $x\in\mathbb{R}$.
-    Then we name
-    
-    - the position operator $\hat{X}=\int_\mathbb{R}x\ket{x}\bra{x}\,\mathrm{d}x$,
-    - the momentum operator $\hat{P}=\int_\mathbb{R}p\ket{p}\bra{p}\,\mathrm{d}p$ with $\braket{x|p}=\frac{e^{+\frac{i}{\hbar}xp}}{\sqrt{2\pi\hbar}}$ and
-    - the kinetic energy $\hat{T}=\frac{\hat{P}^2}{2m}$.
-    
-    Then let
-    
-    - the potential operator $\hat{V}$ be local and position dependent,
-    - the Hamiltonian operator $\hat{H}=\hat{T}+\hat{V}$,
-    - $\left\{\ket{\phi_k}\right\}_k$ be eigenstates of the Hamiltonian,
-    - $\hat{\rho}=\sum_k\ket{\phi_k}\bra{\phi_k}$ the density operator and
-    - $n(x)=\braket{x|\hat{\rho}|x}$ the probability density distribution.
-
-## Complex wavefunctions
-
-We will try to do as many for the general case of complex wavefunctions, but it may not be possible everywhere.
-
-!!! danger "Real wavefunction always possible"
-
-    Should be possible for such a *well-behaving* Hamiltonian to always chose the states to be real?
-
 ## Density norm
 
 All particles must be somewhere.
@@ -70,6 +25,10 @@ $$
         &= +\frac{1}{2}\sum_{k=1}^N||\phi_k'||^2
     \end{aligned}
 $$
+
+## Complex wavefunctions
+
+The bound eigenstates of such a simple one dimensional potential problem without a magnetic field can always be choosen real, therefore the complex case is not considered. Sketched generalisations of the complex version of some chapters can be found in the [complex](complex/single_particle.md) tab.
 
 ## Unitary decomposition invariance
 
